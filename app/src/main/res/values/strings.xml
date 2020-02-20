@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">YouveGotMail</string>
+    <string name="title_activity_scan_activity">scan_activity</string>
+    <string name="title_activity_manual_activity">manual_activity</string>
 </resources>
