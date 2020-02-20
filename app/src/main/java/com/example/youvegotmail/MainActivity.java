@@ -17,15 +17,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void scan_activity(View view) {
+    public void scan(View view) {
         Log.d(LOG_TAG, "Scan Button clicked!");
-        Intent intent = new Intent(this, scan_activity.class);
+        Intent intent = new Intent(this, Scan.class);
         startActivity(intent);
     }
 
-    public void manual_activity(View view) {
+    public void manualInput(View view) {
         Log.d(LOG_TAG, "Manual Button clicked!");
-        Intent intent = new Intent(this, manual_activity.class);
+        Intent intent = new Intent(this, ManualInput.class);
         startActivity(intent);
     }
 }

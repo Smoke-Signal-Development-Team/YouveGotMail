@@ -10,12 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".manual_activity"
+            android:name=".ManualInput"
             android:label="@string/title_activity_manual_activity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".scan_activity"
+            android:name=".Scan"
             android:label="@string/title_activity_scan_activity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
