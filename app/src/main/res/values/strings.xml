@@ -2,4 +2,6 @@
     <string name="app_name">YouveGotMail</string>
     <string name="title_activity_scan_activity">scan_activity</string>
     <string name="title_activity_manual_activity">manual_activity</string>
+    <string name="scan">Scan</string>
+    <string name="manual_input">Manual Input</string>
 </resources>
