@@ -4,4 +4,6 @@
     <string name="title_activity_manual_activity">Manual Input</string>
     <string name="scan">Scan</string>
     <string name="manual_input">Manual Input</string>
+    <string name="registered_boxes">Registered Boxes</string>
+    <string name="registered_boxes_button">Registered Boxes</string>
 </resources>
