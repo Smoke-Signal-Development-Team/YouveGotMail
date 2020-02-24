@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SendConfirm"></activity>
+        <activity android:name=".MailType" />
         <activity
             android:name=".ManualInput"
             android:label="@string/title_activity_manual_activity"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Scan"
             android:label="@string/title_activity_scan_activity"
