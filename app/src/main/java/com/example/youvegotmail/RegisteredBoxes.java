@@ -23,7 +23,7 @@ public class RegisteredBoxes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_registered_boxes);
 
         // Initialize the RecyclerView.
         // Member variables.
