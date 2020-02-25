@@ -42,8 +42,8 @@
 
 
     <array name="sports_images">
-        <item>@drawable/img_baseball</item>
-        <item>@drawable/img_badminton</item>
+        <item>@drawable/img_connor</item>
+        <item>@drawable/img_picard</item>
         <item>@drawable/img_basketball</item>
         <item>@drawable/img_bowling</item>
         <item>@drawable/img_cycling</item>
