@@ -25,7 +25,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
         <TextView
-            android:id="@+id/newsTitleDetail"
+            android:id="@+id/infoDetail"
             style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/newsTitleDetail"
+            android:layout_below="@id/infoDetail"
             android:padding="16dp"
             android:text="@string/subtitle_detail_text" />
 
