@@ -7,18 +7,14 @@
     <string name="registered_boxes">Registered Boxes</string>
     <string name="registered_boxes_button">Registered Boxes</string>
     <string name="title_placeholder">Title</string>
-    <string name="news_placeholder">News</string>
+    <string name="news_placeholder">Name</string>
     <string name="sports_info_placeholder">Here is some news</string>
-    <string name="subtitle_detail_text">Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Praesent ultrices congue rutrum.
-        Phasellus elementum ipsum ac convallis aliquam. Suspendisse eleifend
-        eros a enim faucibus mollis. Nunc placerat, est vitae vestibulum
-        blandit, dolor diam fringilla tellus, eu euismod mauris neque
-        at neque.</string>
+    <string name="subtitle_detail_text">This is information about your P.O. Box.  Info—Info—Info
+    </string>
 
     <string-array name="sports_titles">
-        <item>Baseball</item>
-        <item>Badminton</item>
+        <item>P.O. Box# 1001</item>
+        <item>P.O. Box# 1002</item>
         <item>Basketball</item>
         <item>Bowling</item>
         <item>Cycling</item>
@@ -31,8 +27,8 @@
     </string-array>
 
     <string-array name="sports_info">
-        <item>Here is some Baseball news!</item>
-        <item>Here is some Badminton news!</item>
+        <item>Connor MacLeod</item>
+        <item>Jean-Luc Picard</item>
         <item>Here is some Basketball news!</item>
         <item>Here is some Bowling news!</item>
         <item>Here is some Cycling news!</item>
