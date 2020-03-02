@@ -13,23 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
-/***
- * The adapter class for the RecyclerView, contains the sports data.
- */
 class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
 
     // Member variables.
-    private ArrayList<POBoxes> mSportsData;
+    private ArrayList<POBoxes> poBoxData;
     private Context mContext;
 
-    /**
-     * Constructor that passes in the sports data and the context.
-     *
-     * @param sportsData ArrayList containing the sports data.
-     * @param context Context of the application.
-     */
-    POBoxAdapter(Context context, ArrayList<POBoxes> sportsData) {
-        this.mSportsData = sportsData;
+    POBoxAdapter(Context context, ArrayList<POBoxes> poBoxData) {
+        this.poBoxData = poBoxData;
         this.mContext = context;
     }
 
@@ -59,8 +50,8 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
     @Override
     public void onBindViewHolder(POBoxAdapter.ViewHolder holder,
                                  int position) {
-        // Get current sport.
-        POBoxes currentPOBoxes = mSportsData.get(position);
+        // Get current p.o.box.
+        POBoxes currentPOBoxes = poBoxData.get(position);
 
         // Populate the textviews with data.
         holder.bindTo(currentPOBoxes);
@@ -73,7 +64,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
      */
     @Override
     public int getItemCount() {
-        return mSportsData.size();
+        return poBoxData.size();
     }
 
 
@@ -86,7 +77,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
         // Member Variables for the TextViews
         private TextView mTitleText;
         private TextView mInfoText;
-        private ImageView mSportsImage;
+        private ImageView poBoxImage;
 
         /**
          * Constructor for the ViewHolder, used in onCreateViewHolder().
@@ -99,7 +90,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
             // Initialize the views.
             mTitleText = itemView.findViewById(R.id.title);
             mInfoText = itemView.findViewById(R.id.subTitle);
-            mSportsImage = itemView.findViewById(R.id.sportsImage);
+            poBoxImage = itemView.findViewById(R.id.PO_BOX_IMAGE);
 
             // Set the OnClickListener to the entire view.
             itemView.setOnClickListener(this);
@@ -112,7 +103,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
 
             // Load the images into the ImageView using the Glide library.
             Glide.with(mContext).load(
-                    currentPOBoxes.getImageResource()).into(mSportsImage);
+                    currentPOBoxes.getImageResource()).into(poBoxImage);
         }
 
         /**
@@ -122,7 +113,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
          */
         @Override
         public void onClick(View view) {
-            POBoxes currentPOBoxes = mSportsData.get(getAdapterPosition());
+            POBoxes currentPOBoxes = poBoxData.get(getAdapterPosition());
             Intent detailIntent = new Intent(mContext, DetailActivity.class);
             detailIntent.putExtra("title", currentPOBoxes.getTitle());
             detailIntent.putExtra("image_resource",

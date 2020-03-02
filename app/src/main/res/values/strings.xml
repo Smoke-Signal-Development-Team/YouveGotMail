@@ -26,17 +26,17 @@
     <string-array name="pobox_titles">
         <item>P.O. Box# 1001</item>
         <item>P.O. Box# 1002</item>
-        <item>Basketball</item>
-        <item>Bowling</item>
-        <item>Cycling</item>
+        <item>P.O. Box# 1003</item>
+        <item>P.O. Box# 1004</item>
+        <item>P.O. Box# 1005</item>
     </string-array>
 
     <string-array name="pobox_info">
         <item>Connor MacLeod</item>
         <item>Jean-Luc Picard</item>
-        <item>Here is some Basketball news!</item>
-        <item>Here is some Bowling news!</item>
-        <item>Here is some Cycling news!</item>
+        <item>Sarah Connor</item>
+        <item>Johnny Five</item>
+        <item>Theodore Logan</item>
     </string-array>
 
 
