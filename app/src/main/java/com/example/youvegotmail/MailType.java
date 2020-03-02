@@ -1,7 +1,6 @@
 package com.example.youvegotmail;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 public class MailType extends AppCompatActivity {
