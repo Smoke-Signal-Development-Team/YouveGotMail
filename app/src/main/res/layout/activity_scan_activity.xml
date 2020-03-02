@@ -29,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="266dp"
         android:contentDescription="@string/scan_image"
+        android:onClick="showScanConfirmation"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="center"
         app:srcCompat="@drawable/img_scan" />
