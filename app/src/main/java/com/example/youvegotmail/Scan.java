@@ -37,7 +37,7 @@ public class Scan extends AppCompatActivity {
     public void showScanConfirmation(View view) {
         displayToast(getString(R.string.scan_confirmation));
         Log.d(LOG_TAG, "Scan Button clicked!");
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MailType.class);
         startActivity(intent);
     }
 }
