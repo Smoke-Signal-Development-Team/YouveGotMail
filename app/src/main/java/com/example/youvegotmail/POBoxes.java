@@ -3,7 +3,7 @@ package com.example.youvegotmail;
 /**
  * Data model for each row of the RecyclerView
  */
-class Sport {
+class POBoxes {
 
     // Member variables representing the title and information about the sport.
     private String title;
@@ -11,12 +11,12 @@ class Sport {
     private final int imageResource;
 
     /**
-     * Constructor for the Sport data model.
+     * Constructor for the POBoxes data model.
      *
      * @param title The name if the sport.
      * @param info Information about the sport.
      */
-    Sport(String title, String info, int imageResource) {
+    POBoxes(String title, String info, int imageResource) {
         this.title = title;
         this.info = info;
         this.imageResource = imageResource;

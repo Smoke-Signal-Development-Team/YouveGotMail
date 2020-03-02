@@ -16,10 +16,10 @@ import java.util.ArrayList;
 /***
  * The adapter class for the RecyclerView, contains the sports data.
  */
-class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
+class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
 
     // Member variables.
-    private ArrayList<Sport> mSportsData;
+    private ArrayList<POBoxes> mSportsData;
     private Context mContext;
 
     /**
@@ -28,7 +28,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
      * @param sportsData ArrayList containing the sports data.
      * @param context Context of the application.
      */
-    SportsAdapter(Context context, ArrayList<Sport> sportsData) {
+    POBoxAdapter(Context context, ArrayList<POBoxes> sportsData) {
         this.mSportsData = sportsData;
         this.mContext = context;
     }
@@ -44,7 +44,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
      */
     @NonNull
     @Override
-    public SportsAdapter.ViewHolder onCreateViewHolder(
+    public POBoxAdapter.ViewHolder onCreateViewHolder(
             @NonNull ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(mContext).
                 inflate(R.layout.list_item, parent, false));
@@ -57,13 +57,13 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
      * @param position The adapter position.
      */
     @Override
-    public void onBindViewHolder(SportsAdapter.ViewHolder holder,
+    public void onBindViewHolder(POBoxAdapter.ViewHolder holder,
                                  int position) {
         // Get current sport.
-        Sport currentSport = mSportsData.get(position);
+        POBoxes currentPOBoxes = mSportsData.get(position);
 
         // Populate the textviews with data.
-        holder.bindTo(currentSport);
+        holder.bindTo(currentPOBoxes);
     }
 
     /**
@@ -105,14 +105,14 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
             itemView.setOnClickListener(this);
         }
 
-        void bindTo(Sport currentSport){
+        void bindTo(POBoxes currentPOBoxes){
             // Populate the textviews with data.
-            mTitleText.setText(currentSport.getTitle());
-            mInfoText.setText(currentSport.getInfo());
+            mTitleText.setText(currentPOBoxes.getTitle());
+            mInfoText.setText(currentPOBoxes.getInfo());
 
             // Load the images into the ImageView using the Glide library.
             Glide.with(mContext).load(
-                    currentSport.getImageResource()).into(mSportsImage);
+                    currentPOBoxes.getImageResource()).into(mSportsImage);
         }
 
         /**
@@ -122,12 +122,12 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
          */
         @Override
         public void onClick(View view) {
-            Sport currentSport = mSportsData.get(getAdapterPosition());
+            POBoxes currentPOBoxes = mSportsData.get(getAdapterPosition());
             Intent detailIntent = new Intent(mContext, DetailActivity.class);
-            detailIntent.putExtra("title", currentSport.getTitle());
+            detailIntent.putExtra("title", currentPOBoxes.getTitle());
             detailIntent.putExtra("image_resource",
-                    currentSport.getImageResource());
-            detailIntent.putExtra("info", currentSport.getInfo());
+                    currentPOBoxes.getImageResource());
+            detailIntent.putExtra("info", currentPOBoxes.getInfo());
             mContext.startActivity(detailIntent);
         }
     }

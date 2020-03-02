@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/newsTitle"
             android:padding="8dp"
-            android:text="@string/sports_info_placeholder" />
+            android:text="@string/pobox_info_placeholder" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

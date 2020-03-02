@@ -17,8 +17,8 @@ import java.util.Collections;
  */
 public class RegisteredBoxes extends AppCompatActivity {
 
-    private ArrayList<Sport> mSportsData;
-    private SportsAdapter mAdapter;
+    private ArrayList<POBoxes> mSportsData;
+    private POBoxAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class RegisteredBoxes extends AppCompatActivity {
         mSportsData = new ArrayList<>();
 
         // Initialize the adapter and set it to the RecyclerView.
-        mAdapter = new SportsAdapter(this, mSportsData);
+        mAdapter = new POBoxAdapter(this, mSportsData);
         mRecyclerView.setAdapter(mAdapter);
 
         // Get the data.
@@ -98,11 +98,11 @@ public class RegisteredBoxes extends AppCompatActivity {
     private void initializeData() {
         // Get the resources from the XML file.
         String[] sportsList = getResources()
-                .getStringArray(R.array.sports_titles);
+                .getStringArray(R.array.pobox_titles);
         String[] sportsInfo = getResources()
-                .getStringArray(R.array.sports_info);
+                .getStringArray(R.array.pobox_info);
         TypedArray sportsImageResources = getResources()
-                .obtainTypedArray(R.array.sports_images);
+                .obtainTypedArray(R.array.pobox_images);
 
         // Clear the existing data (to avoid duplication).
         mSportsData.clear();
@@ -110,7 +110,7 @@ public class RegisteredBoxes extends AppCompatActivity {
         // Create the ArrayList of Sports objects with the titles and
         // information about each sport
         for (int i = 0; i < sportsList.length; i++) {
-            mSportsData.add(new Sport(sportsList[i], sportsInfo[i],
+            mSportsData.add(new POBoxes(sportsList[i], sportsInfo[i],
                     sportsImageResources.getResourceId(i, 0)));
         }
 
