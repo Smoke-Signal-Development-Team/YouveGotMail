@@ -55,6 +55,15 @@
         <item>@drawable/img_swimming</item>
         <item>@drawable/img_tabletennis</item>
         <item>@drawable/img_tennis</item>
-
     </array>
+
+    <string name="envelope_button_text">Envelope</string>
+    <string name="envelope_package_button_text"><![CDATA[Envelope & Package]]></string>
+    <string name="package_button_text">Package</string>
+    <string name="mail_type">Mail Type</string>
+    <string name="is_this_correct">Is this correct?</string>
+    <string name="confirm_send"><![CDATA[Yes, Confirm & Send]]></string>
+    <string name="box_number_text">PO BOX #</string>
+    <string name="wrong_box_text">No, Wrong PO Box</string>
+    <string name="wrong_mail_button">No, Wrong Mail Type</string>
 </resources>
