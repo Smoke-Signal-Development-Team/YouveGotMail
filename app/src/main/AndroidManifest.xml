@@ -9,8 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SendConfirm"></activity>
-        <activity android:name=".MailType" />
+
+        <!-- is this the correct parent activity? -->
+        <activity
+            android:name=".SendConfirm"
+            android:label = "Send and Confirm"
+            android:parentActivityName=".MainActivity">
+        </activity>
+
+        <!-- is this the correct parent activity? -->
+        <activity android:name=".MailType"
+            android:label = "Mail Type"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".ManualInput"
             android:label="@string/title_activity_manual_activity"

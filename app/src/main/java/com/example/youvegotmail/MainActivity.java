@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,4 +30,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ManualInput.class);
         startActivity(intent);
     }
+
+    // Not sure if this section belongs in MainActivity or MailType
+    public void launchEnvConfirmActivity(View view) {
+        Log.d(LOG_TAG, "Envelope Selected");
+        Intent intent = new Intent(this, SendConfirm.class);
+        startActivity(intent);
+    }
+
 }
