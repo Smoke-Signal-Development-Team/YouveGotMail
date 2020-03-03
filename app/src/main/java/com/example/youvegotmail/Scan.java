@@ -38,6 +38,8 @@ public class Scan extends AppCompatActivity {
         displayToast(getString(R.string.scan_confirmation));
         Log.d(LOG_TAG, "Scan Button clicked!");
         Intent intent = new Intent(this, MailType.class);
+        intent.putExtra("title", "P.O. Box# 1006");
+        intent.putExtra("info", "John Wick");
         startActivity(intent);
     }
 }
