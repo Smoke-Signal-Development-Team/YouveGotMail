@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+<<<<<<< HEAD
         <!-- Type something here to test commit -->
+=======
+>>>>>>> parent of 359ea93... Test 03-02
         <!-- is this the correct parent activity? -->
         <activity
             android:name=".SendConfirm"
@@ -28,6 +31,7 @@
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
 
         <activity android:name=".RegisteredBoxes"
             android:label = "@string/registered_boxes"
@@ -35,6 +39,8 @@
             ></activity>
 
 
+=======
+>>>>>>> parent of 359ea93... Test 03-02
         <activity
             android:name=".ManualInput"
             android:label="@string/title_activity_manual_activity"
@@ -56,8 +62,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".DetailActivity"
             android:parentActivityName=".RegisteredBoxes"/>
+=======
+>>>>>>> parent of 359ea93... Test 03-02
     </application>
 
 </manifest>
