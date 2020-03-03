@@ -39,5 +39,5 @@
         <activity android:name=".DetailActivity"
             android:parentActivityName=".RegisteredBoxes"/>
     </application>
-
+//whhaaat
 </manifest>
