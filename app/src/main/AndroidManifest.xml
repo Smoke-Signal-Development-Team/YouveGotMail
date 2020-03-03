@@ -33,8 +33,7 @@
             android:label = "@string/registered_boxes"
             android:parentActivityName=".ManualInput"
             ></activity>
-        <activity android:name=".SendConfirm"></activity>
-        <activity android:name=".MailType" />
+
 
         <activity
             android:name=".ManualInput"
