@@ -6,8 +6,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,12 +22,15 @@ public class RegisteredBoxes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registered_boxes);
 
+        int gridColumnCount =
+                getResources().getInteger(R.integer.grid_column_count);
         // Initialize the RecyclerView.
         // Member variables.
         RecyclerView mRecyclerView = findViewById(R.id.recyclerView);
 
         // Set the Layout Manager.
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new
+                GridLayoutManager(this, gridColumnCount));
 
         // Initialize the ArrayList that will contain the data.
         poBoxData = new ArrayList<>();
@@ -39,13 +42,21 @@ public class RegisteredBoxes extends AppCompatActivity {
         // Get the data.
         initializeData();
 
+        // If there is more than one column, disable swipe to dismiss
+        int swipeDirs;
+        if(gridColumnCount > 1){
+            swipeDirs = 0;
+        } else {
+            swipeDirs = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+        }
+
         // Helper class for creating swipe to dismiss and drag and drop
-        // functionality.
+        // functionality
         ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper
                 .SimpleCallback(
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT |
                         ItemTouchHelper.DOWN | ItemTouchHelper.UP,
-                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+                swipeDirs) {
 
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView,
