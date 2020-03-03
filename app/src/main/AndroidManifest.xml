@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <!-- is this the correct parent activity? -->
         <activity
             android:name=".SendConfirm"
@@ -26,6 +27,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity android:name=".RegisteredBoxes"
+            android:label = "@string/registered_boxes"
+            android:parentActivityName=".ManualInput"
+            ></activity>
+        <activity android:name=".SendConfirm"></activity>
+        <activity android:name=".MailType" />
 
         <activity
             android:name=".ManualInput"
@@ -48,6 +57,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DetailActivity" />
     </application>
 
 </manifest>
