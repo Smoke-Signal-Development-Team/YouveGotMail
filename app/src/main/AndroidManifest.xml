@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
+        <!-- Type something here to test commit -->
         <!-- is this the correct parent activity? -->
         <activity
             android:name=".SendConfirm"
