@@ -4,7 +4,6 @@
     <string name="title_activity_manual_activity">Manual Input</string>
     <string name="scan">Scan</string>
     <string name="manual_input">Manual Input</string>
-<<<<<<< HEAD
     <string name="registered_boxes">Registered Boxes</string>
     <string name="registered_boxes_button">Registered Boxes</string>
     <string name="title_placeholder">Title</string>
@@ -14,8 +13,6 @@
     <string name="subtitle_detail_text">This is information about your P.O. Box.  Info—Info—Info
     </string>
     <string name="scan_image">Scan Image</string>
-=======
->>>>>>> parent of 359ea93... Test 03-02
     <string name="envelope_button_text">Envelope</string>
     <string name="envelope_package_button_text"><![CDATA[Envelope & Package]]></string>
     <string name="package_button_text">Package</string>
@@ -25,7 +22,6 @@
     <string name="box_number_text">PO BOX #</string>
     <string name="wrong_box_text">No, Wrong PO Box</string>
     <string name="wrong_mail_button">No, Wrong Mail Type</string>
-<<<<<<< HEAD
 
     <string-array name="pobox_titles">
         <item>P.O. Box# 1001</item>
@@ -45,13 +41,9 @@
 
 
     <array name="pobox_images">
-        <item>@drawable/img_connor</item>
-        <item>@drawable/img_picard</item>
         <item>@drawable/img_sarah_connor</item>
         <item>@drawable/img_johnny_five</item>
         <item>@drawable/img_theodore_logan</item>
     </array>
 
-=======
->>>>>>> parent of 359ea93... Test 03-02
 </resources>
