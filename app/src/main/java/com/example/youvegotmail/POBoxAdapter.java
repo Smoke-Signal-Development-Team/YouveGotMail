@@ -115,7 +115,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
         public void onClick(View view) {
             POBoxes currentPOBoxes = poBoxData.get(getAdapterPosition());
                 //Change to DetailActivity.class for future details page
-            Intent detailIntent = new Intent(mContext, MailType.class);
+            Intent detailIntent = new Intent(mContext, DetailActivity.class);
             detailIntent.putExtra("title", currentPOBoxes.getTitle());
                 /*detailIntent.putExtra("image_resource",
                         currentPOBoxes.getImageResource());*/

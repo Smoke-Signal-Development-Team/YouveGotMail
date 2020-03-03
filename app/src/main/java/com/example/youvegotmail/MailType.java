@@ -21,8 +21,6 @@ public class MailType extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mail_type);
 
-
-
     }
 
     public void launchEnvConfirmActivity(View view) {
