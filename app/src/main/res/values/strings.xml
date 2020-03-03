@@ -9,54 +9,10 @@
     <string name="title_placeholder">Title</string>
     <string name="news_placeholder">Name</string>
     <string name="scan_confirmation">Scan Successful</string>
-    <string name="sports_info_placeholder">Here is some news</string>
+    <string name="pobox_info_placeholder">Here is some news</string>
     <string name="subtitle_detail_text">This is information about your P.O. Box.  Info—Info—Info
     </string>
     <string name="scan_image">Scan Image</string>
-
-    <string-array name="sports_titles">
-        <item>P.O. Box# 1001</item>
-        <item>P.O. Box# 1002</item>
-        <item>Basketball</item>
-        <item>Bowling</item>
-        <item>Cycling</item>
-        <item>Golf</item>
-        <item>Running</item>
-        <item>Soccer</item>
-        <item>Swimming</item>
-        <item>Table Tennis</item>
-        <item>Tennis</item>
-    </string-array>
-
-    <string-array name="sports_info">
-        <item>Connor MacLeod</item>
-        <item>Jean-Luc Picard</item>
-        <item>Here is some Basketball news!</item>
-        <item>Here is some Bowling news!</item>
-        <item>Here is some Cycling news!</item>
-        <item>Here is some Golf news!</item>
-        <item>Here is some Running news!</item>
-        <item>Here is some Soccer news!</item>
-        <item>Here is some Swimming news!</item>
-        <item>Here is some Table Tennis news!</item>
-        <item>Here is some Tennis news!</item>
-    </string-array>
-
-
-    <array name="sports_images">
-        <item>@drawable/img_connor</item>
-        <item>@drawable/img_picard</item>
-        <item>@drawable/img_basketball</item>
-        <item>@drawable/img_bowling</item>
-        <item>@drawable/img_cycling</item>
-        <item>@drawable/img_golf</item>
-        <item>@drawable/img_running</item>
-        <item>@drawable/img_soccer</item>
-        <item>@drawable/img_swimming</item>
-        <item>@drawable/img_tabletennis</item>
-        <item>@drawable/img_tennis</item>
-    </array>
-
     <string name="envelope_button_text">Envelope</string>
     <string name="envelope_package_button_text"><![CDATA[Envelope & Package]]></string>
     <string name="package_button_text">Package</string>
@@ -66,4 +22,30 @@
     <string name="box_number_text">PO BOX #</string>
     <string name="wrong_box_text">No, Wrong PO Box</string>
     <string name="wrong_mail_button">No, Wrong Mail Type</string>
+
+    <string-array name="pobox_titles">
+        <item>P.O. Box# 1001</item>
+        <item>P.O. Box# 1002</item>
+        <item>P.O. Box# 1003</item>
+        <item>P.O. Box# 1004</item>
+        <item>P.O. Box# 1005</item>
+    </string-array>
+
+    <string-array name="pobox_info">
+        <item>Connor MacLeod</item>
+        <item>Jean-Luc Picard</item>
+        <item>Sarah Connor</item>
+        <item>Johnny Five</item>
+        <item>Theodore Logan</item>
+    </string-array>
+
+
+    <array name="pobox_images">
+        <item>@drawable/img_connor</item>
+        <item>@drawable/img_picard</item>
+        <item>@drawable/img_sarah_connor</item>
+        <item>@drawable/img_johnny_five</item>
+        <item>@drawable/img_theodore_logan</item>
+    </array>
+
 </resources>

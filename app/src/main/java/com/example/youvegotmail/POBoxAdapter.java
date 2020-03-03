@@ -13,23 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
-/***
- * The adapter class for the RecyclerView, contains the sports data.
- */
-class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
+class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
 
     // Member variables.
-    private ArrayList<Sport> mSportsData;
+    private ArrayList<POBoxes> poBoxData;
     private Context mContext;
 
-    /**
-     * Constructor that passes in the sports data and the context.
-     *
-     * @param sportsData ArrayList containing the sports data.
-     * @param context Context of the application.
-     */
-    SportsAdapter(Context context, ArrayList<Sport> sportsData) {
-        this.mSportsData = sportsData;
+    POBoxAdapter(Context context, ArrayList<POBoxes> poBoxData) {
+        this.poBoxData = poBoxData;
         this.mContext = context;
     }
 
@@ -44,7 +35,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
      */
     @NonNull
     @Override
-    public SportsAdapter.ViewHolder onCreateViewHolder(
+    public POBoxAdapter.ViewHolder onCreateViewHolder(
             @NonNull ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(mContext).
                 inflate(R.layout.list_item, parent, false));
@@ -57,13 +48,13 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
      * @param position The adapter position.
      */
     @Override
-    public void onBindViewHolder(SportsAdapter.ViewHolder holder,
+    public void onBindViewHolder(POBoxAdapter.ViewHolder holder,
                                  int position) {
-        // Get current sport.
-        Sport currentSport = mSportsData.get(position);
+        // Get current p.o.box.
+        POBoxes currentPOBoxes = poBoxData.get(position);
 
         // Populate the textviews with data.
-        holder.bindTo(currentSport);
+        holder.bindTo(currentPOBoxes);
     }
 
     /**
@@ -73,7 +64,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
      */
     @Override
     public int getItemCount() {
-        return mSportsData.size();
+        return poBoxData.size();
     }
 
 
@@ -86,7 +77,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
         // Member Variables for the TextViews
         private TextView mTitleText;
         private TextView mInfoText;
-        private ImageView mSportsImage;
+        private ImageView poBoxImage;
 
         /**
          * Constructor for the ViewHolder, used in onCreateViewHolder().
@@ -99,20 +90,20 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
             // Initialize the views.
             mTitleText = itemView.findViewById(R.id.title);
             mInfoText = itemView.findViewById(R.id.subTitle);
-            mSportsImage = itemView.findViewById(R.id.sportsImage);
+            poBoxImage = itemView.findViewById(R.id.PO_BOX_IMAGE);
 
             // Set the OnClickListener to the entire view.
             itemView.setOnClickListener(this);
         }
 
-        void bindTo(Sport currentSport){
+        void bindTo(POBoxes currentPOBoxes){
             // Populate the textviews with data.
-            mTitleText.setText(currentSport.getTitle());
-            mInfoText.setText(currentSport.getInfo());
+            mTitleText.setText(currentPOBoxes.getTitle());
+            mInfoText.setText(currentPOBoxes.getInfo());
 
             // Load the images into the ImageView using the Glide library.
             Glide.with(mContext).load(
-                    currentSport.getImageResource()).into(mSportsImage);
+                    currentPOBoxes.getImageResource()).into(poBoxImage);
         }
 
         /**
@@ -122,12 +113,13 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>  {
          */
         @Override
         public void onClick(View view) {
-            Sport currentSport = mSportsData.get(getAdapterPosition());
-            Intent detailIntent = new Intent(mContext, DetailActivity.class);
-            detailIntent.putExtra("title", currentSport.getTitle());
-            detailIntent.putExtra("image_resource",
-                    currentSport.getImageResource());
-            detailIntent.putExtra("info", currentSport.getInfo());
+            POBoxes currentPOBoxes = poBoxData.get(getAdapterPosition());
+                //Change to DetailActivity.class for future details page
+            Intent detailIntent = new Intent(mContext, MailType.class);
+            detailIntent.putExtra("title", currentPOBoxes.getTitle());
+                /*detailIntent.putExtra("image_resource",
+                        currentPOBoxes.getImageResource());*/
+            detailIntent.putExtra("info", currentPOBoxes.getInfo());
             mContext.startActivity(detailIntent);
         }
     }

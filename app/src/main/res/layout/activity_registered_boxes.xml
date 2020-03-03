@@ -25,6 +25,6 @@
         android:layout_margin="16dp"
         android:src="@drawable/ic_reset"
         android:tint="@android:color/white"
-        android:onClick="resetSports"/>
+        android:onClick="resetpoBoxes"/>
 
 </RelativeLayout>
