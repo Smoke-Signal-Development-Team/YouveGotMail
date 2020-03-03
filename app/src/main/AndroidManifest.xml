@@ -11,14 +11,15 @@
         android:theme="@style/AppTheme">
 
         <!-- Type something here to test commit -->
-        <!-- is this the correct parent activity? -->
+        <!-- is this the correct parent activity?
         <activity
             android:name=".SendConfirm"
             android:label = "Send and Confirm"
             android:parentActivityName=".MainActivity">
         </activity>
+        -->
 
-        <!-- is this the correct parent activity? -->
+        <!-- is this the correct parent activity?
         <activity android:name=".MailType"
             android:label = "Mail Type"
             android:parentActivityName=".MainActivity">
@@ -27,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+         -->
 
 
         <activity android:name=".RegisteredBoxes"
