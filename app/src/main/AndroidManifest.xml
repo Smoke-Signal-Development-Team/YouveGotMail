@@ -33,9 +33,7 @@
 
         <activity android:name=".RegisteredBoxes"
             android:label = "@string/registered_boxes"
-            android:parentActivityName=".ManualInput"
-            ></activity>
-
+            android:parentActivityName=".ManualInput"></activity>
 
         <activity
             android:name=".ManualInput"
@@ -58,8 +56,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".DetailActivity"
             android:parentActivityName=".RegisteredBoxes"/>
+
     </application>
 
 </manifest>

@@ -1,23 +1,17 @@
 package com.example.youvegotmail;
 
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import java.util.Objects;
+import android.view.View;
 
 public class Scan extends AppCompatActivity {
-    private static final String LOG_TAG =
-            MainActivity.class.getSimpleName();
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +19,10 @@ public class Scan extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+<<<<<<< HEAD
     public void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
@@ -42,4 +37,6 @@ public class Scan extends AppCompatActivity {
         intent.putExtra("info", "John Wick");
         startActivity(intent);
     }
+=======
+>>>>>>> parent of 359ea93... Test 03-02
 }
