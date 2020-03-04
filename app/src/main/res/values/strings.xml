@@ -42,6 +42,8 @@
 
 
     <array name="pobox_images">
+        <item>@drawable/img_connor</item>
+        <item>@drawable/img_picard</item>
         <item>@drawable/img_sarah_connor</item>
         <item>@drawable/img_johnny_five</item>
         <item>@drawable/img_theodore_logan</item>

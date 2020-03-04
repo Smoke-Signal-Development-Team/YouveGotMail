@@ -10,7 +10,9 @@ package="com.example.youvegotmail">
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".SendConfirm"></activity>
 
+        <activity android:name=".MailType"></activity>
         <!-- is this the correct parent activity?
         <activity
             android:name=".SendConfirm"
@@ -40,15 +42,18 @@ package="com.example.youvegotmail">
             android:label="@string/title_activity_manual_activity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Scan"
             android:label="@string/title_activity_scan_activity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.youvegotmail.MainActivity" />
         </activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
