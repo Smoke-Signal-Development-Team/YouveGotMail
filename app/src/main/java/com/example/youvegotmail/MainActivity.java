@@ -30,11 +30,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // Not sure if this section belongs in MainActivity or MailType
+    /* Not sure if this section belongs in MainActivity or MailType
     public void launchEnvConfirmActivity(View view) {
         Log.d(LOG_TAG, "Envelope Selected");
         Intent intent = new Intent(this, SendConfirm.class);
         startActivity(intent);
     }
+    */
+
 
 }

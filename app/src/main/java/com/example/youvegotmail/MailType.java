@@ -10,6 +10,7 @@ import android.view.View;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MailType extends AppCompatActivity {
 
@@ -20,6 +21,8 @@ public class MailType extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mail_type);
+
+
         // Initialize the views.
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView poBoxInfo = findViewById(R.id.infoDetail);
@@ -29,11 +32,18 @@ public class MailType extends AppCompatActivity {
         poBoxInfo.setText(getIntent().getStringExtra("info"));
     }
 
+    public void displayToast(String message) {
+        Toast.makeText(getApplicationContext(), message,
+                Toast.LENGTH_LONG).show();
+    }
+
     public void launchEnvConfirmActivity(View view) {
+        displayToast(getString(R.string.envelope_selected_confirmation));
         Log.d(LOG_TAG, "Envelope Selected");
         Intent intent = new Intent(this, SendConfirm.class);
         startActivity(intent);
 
+        /*
         // Initialize the views.
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView poBoxInfo = findViewById(R.id.infoDetail);
@@ -41,9 +51,22 @@ public class MailType extends AppCompatActivity {
         // Set the text from the Intent extra.
         poBoxTitle.setText(getIntent().getStringExtra("title"));
         poBoxInfo.setText(getIntent().getStringExtra("info"));
+         */
 
     }
 
+    public void launchPkgConfirmActivity(View view) {
+        displayToast(getString(R.string.package_selected_confirmation));
+        Log.d(LOG_TAG, "Package Selected");
+        Intent intent = new Intent(this, SendConfirm.class);
+        startActivity(intent);
 
+    }
 
+    public void launchEnvPkgConfirmActivity(View view) {
+        displayToast(getString(R.string.envpkg_selected_confirmation));
+        Log.d(LOG_TAG, "Envelope and Package Selected");
+        Intent intent = new Intent(this, SendConfirm.class);
+        startActivity(intent);
+    }
 }

@@ -14,8 +14,11 @@
     </string>
     <string name="scan_image">Scan Image</string>
     <string name="envelope_button_text">Envelope</string>
+    <string name="envelope_selected_confirmation">Envelope Selected</string>
     <string name="envelope_package_button_text"><![CDATA[Envelope & Package]]></string>
+    <string name="envpkg_selected_confirmation"><![CDATA[Envelope & Package Selected]]></string>
     <string name="package_button_text">Package</string>
+    <string name="package_selected_confirmation">Package Selected</string>
     <string name="mail_type">Mail Type</string>
     <string name="is_this_correct">Is this correct?</string>
     <string name="confirm_send"><![CDATA[Yes, Confirm & Send]]></string>
@@ -23,6 +26,7 @@
     <string name="wrong_box_text">No, Wrong PO Box</string>
     <string name="wrong_mail_button">No, Wrong Mail Type</string>
     <string name="pobox_image">PObox_image</string>
+
 
     <string-array name="pobox_titles">
         <item>P.O. Box# 1001</item>
