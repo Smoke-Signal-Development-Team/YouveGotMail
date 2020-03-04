@@ -24,8 +24,11 @@
     <string name="confirm_send"><![CDATA[Yes, Confirm & Send]]></string>
     <string name="box_number_text">PO BOX #</string>
     <string name="wrong_box_text">No, Wrong PO Box</string>
+    <string name="wrong_po_box">Please Select the Right PO Box</string>
     <string name="wrong_mail_button">No, Wrong Mail Type</string>
+    <string name="wrong_mail_type">Wrong Mail Type. Please Select Correctly</string>
     <string name="pobox_image">PObox_image</string>
+    <string name="confirm_push">You\'ve Got Mail! Notification Sent!</string>
 
 
     <string-array name="pobox_titles">

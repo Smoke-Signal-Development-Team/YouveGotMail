@@ -15,7 +15,8 @@
         android:layout_marginTop="40dp"
         android:padding="16dp"
         android:text="@string/title_placeholder"
-        android:textColor="?android:textColorSecondary"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +29,9 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:text="@string/news_placeholder"
-        android:textColor="?android:textColorSecondary"
+        android:textColor="#00838F"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/envelope_mail_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +47,8 @@
         android:layout_marginTop="180dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:background="#00ACC1"
+        android:background="#0277BD"
+        android:onClick="launchEnvConfirmActivity"
         android:text="@string/envelope_button_text"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -52,14 +56,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="launchEnvConfirmActivity"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/package_mail_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#C0CA33"
+        android:background="#9E9D24"
+        android:onClick="launchPkgConfirmActivity"
         android:text="@string/package_button_text"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -69,15 +73,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/envelope_mail_button"
         app:layout_constraintTop_toBottomOf="@+id/envelope_mail_button"
-        app:layout_constraintVertical_bias="0.515"
-        android:onClick="launchPkgConfirmActivity"/>
+        app:layout_constraintVertical_bias="0.515" />
 
     <Button
         android:id="@+id/both_mail_button"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginBottom="180dp"
-        android:background="#FFB300"
+        android:background="#FF8F00"
+        android:onClick="launchEnvPkgConfirmActivity"
         android:text="@string/envelope_package_button_text"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -85,8 +89,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/envelope_mail_button"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/envelope_mail_button"
-        android:onClick="launchEnvPkgConfirmActivity"/>
+        app:layout_constraintStart_toStartOf="@+id/envelope_mail_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

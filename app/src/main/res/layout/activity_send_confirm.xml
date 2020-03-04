@@ -6,6 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".SendConfirm">
 
+
+    <TextView
+        android:id="@+id/correct_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="@string/is_this_correct"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#0277BD"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleDetail"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:padding="16dp"
+        android:text="@string/title_placeholder"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/your_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mail_type"
+        android:textColor="#D84315"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_send_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correct_text"
+        app:layout_constraintVertical_bias="0.284" />
+
+    <TextView
+        android:id="@+id/po_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/box_number_text"
+        android:textColor="#FB8C00"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_send_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/your_mail" />
+
+
     <Button
         android:id="@+id/confirm_send_button"
         android:layout_width="0dp"
@@ -14,8 +75,9 @@
         android:layout_marginLeft="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="256dp"
-        android:background="#C0CA33"
+        android:layout_marginBottom="272dp"
+        android:background="#9E9D24"
+        android:onClick="launchConfirmSendActivity"
         android:text="@string/confirm_send"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -25,40 +87,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/your_mail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mail_type"
-        android:textColor="#FB8C00"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/confirm_send_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correct_button" />
-
     <Button
-        android:id="@+id/correct_button"
+        android:id="@+id/wrong_mail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#00ACC1"
-        android:text="@string/is_this_correct"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/confirm_send_button"
-        app:layout_constraintEnd_toEndOf="@+id/confirm_send_button"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/confirm_send_button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#F4511E"
+        android:background="#D84315"
         android:text="@string/wrong_mail_button"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -68,6 +101,25 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/confirm_send_button"
         app:layout_constraintTop_toBottomOf="@+id/confirm_send_button"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.139"
+        android:onClick="launchWrongTypeActivity"/>
+
+    <Button
+        android:id="@+id/wrong_po_box"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FF8F00"
+        android:onClick="launchWrongPOBoxActivity"
+        android:text="@string/wrong_box_text"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/confirm_send_button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/confirm_send_button"
+        app:layout_constraintTop_toBottomOf="@+id/confirm_send_button"
+        app:layout_constraintVertical_bias="0.514" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

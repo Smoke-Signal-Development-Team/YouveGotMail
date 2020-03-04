@@ -41,6 +41,8 @@ public class MailType extends AppCompatActivity {
         displayToast(getString(R.string.envelope_selected_confirmation));
         Log.d(LOG_TAG, "Envelope Selected");
         Intent intent = new Intent(this, SendConfirm.class);
+        //intent.putExtra("title", "P.O. Box# 1006");
+        //intent.putExtra("info", "John Wick");
         startActivity(intent);
 
         /*
