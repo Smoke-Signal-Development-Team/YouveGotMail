@@ -26,10 +26,12 @@ public class MailType extends AppCompatActivity {
         // Initialize the views.
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView poBoxInfo = findViewById(R.id.infoDetail);
+        //TextView mailTypeEnv = findViewById(R.id.infoDetail);
 
         // Set the text from the Intent extra.
         poBoxTitle.setText(getIntent().getStringExtra("title"));
         poBoxInfo.setText(getIntent().getStringExtra("info"));
+        //mailTypeEnv.setText(getIntent().getStringExtra(typeE);
     }
 
     public void displayToast(String message) {
@@ -41,19 +43,20 @@ public class MailType extends AppCompatActivity {
         displayToast(getString(R.string.envelope_selected_confirmation));
         Log.d(LOG_TAG, "Envelope Selected");
         Intent intent = new Intent(this, SendConfirm.class);
-        //intent.putExtra("title", "P.O. Box# 1006");
+        intent.putExtra("title", "P.O. Box# 1006");
         //intent.putExtra("info", "John Wick");
+        intent.putExtra("type", "Envelope");
         startActivity(intent);
 
-        /*
+
         // Initialize the views.
         TextView poBoxTitle = findViewById(R.id.titleDetail);
-        TextView poBoxInfo = findViewById(R.id.infoDetail);
+        //TextView poBoxInfo = findViewById(R.id.infoDetail);
 
         // Set the text from the Intent extra.
         poBoxTitle.setText(getIntent().getStringExtra("title"));
-        poBoxInfo.setText(getIntent().getStringExtra("info"));
-         */
+        //poBoxInfo.setText(getIntent().getStringExtra("info"));
+
 
     }
 

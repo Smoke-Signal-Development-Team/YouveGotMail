@@ -29,6 +29,7 @@
     <string name="wrong_mail_type">Wrong Mail Type. Please Select Correctly</string>
     <string name="pobox_image">PObox_image</string>
     <string name="confirm_push">You\'ve Got Mail! Notification Sent!</string>
+    <string name="type">type</string>
 
 
     <string-array name="pobox_titles">
