@@ -30,6 +30,8 @@
     <string name="pobox_image">PObox_image</string>
     <string name="confirm_push">You\'ve Got Mail! Notification Sent!</string>
     <string name="type">type</string>
+    <string name="mailbox_full_button_text">Mailbox Full</string>
+    <string name="mailbox_full_push">Mailbox Full Notification Sent!</string>
 
 
     <string-array name="pobox_titles">

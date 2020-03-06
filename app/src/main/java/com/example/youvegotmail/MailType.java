@@ -81,4 +81,11 @@ public class MailType extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void launchMailboxFullActivity(View view) {
+        displayToast(getString(R.string.mailbox_full_push));
+        Log.d(LOG_TAG, "Mailbox Full Notification Sent!");
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
