@@ -44,17 +44,19 @@ public class MailType extends AppCompatActivity {
         Log.d(LOG_TAG, "Envelope Selected");
         Intent intent = new Intent(this, SendConfirm.class);
         intent.putExtra("title", "P.O. Box# 1006");
-        //intent.putExtra("info", "John Wick");
         intent.putExtra("type", "Envelope");
+        //intent.putExtra("info", "John Wick");
         startActivity(intent);
 
 
         // Initialize the views.
         TextView poBoxTitle = findViewById(R.id.titleDetail);
+        //TextView mailTypeEnv = findViewById(R.id.your_mail);
         //TextView poBoxInfo = findViewById(R.id.infoDetail);
 
         // Set the text from the Intent extra.
         poBoxTitle.setText(getIntent().getStringExtra("title"));
+        //mailTypeEnv.setText(getIntent().getStringExtra("type"));
         //poBoxInfo.setText(getIntent().getStringExtra("info"));
 
 
@@ -64,6 +66,8 @@ public class MailType extends AppCompatActivity {
         displayToast(getString(R.string.package_selected_confirmation));
         Log.d(LOG_TAG, "Package Selected");
         Intent intent = new Intent(this, SendConfirm.class);
+        intent.putExtra("title", "P.O. Box# 1006");
+        intent.putExtra("type", "Package");
         startActivity(intent);
 
     }
@@ -72,6 +76,9 @@ public class MailType extends AppCompatActivity {
         displayToast(getString(R.string.envpkg_selected_confirmation));
         Log.d(LOG_TAG, "Envelope and Package Selected");
         Intent intent = new Intent(this, SendConfirm.class);
+        intent.putExtra("title", "P.O. Box# 1006");
+        intent.putExtra("type", "Envelop & Package");
+
         startActivity(intent);
     }
 }
