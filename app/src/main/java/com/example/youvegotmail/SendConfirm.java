@@ -19,15 +19,17 @@ public class SendConfirm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_confirm);
 
-        /*
+
         // Initialize the views.
         TextView poBoxTitle = findViewById(R.id.titleDetail);
-        TextView poBoxInfo = findViewById(R.id.infoDetail);
+        //TextView poBoxInfo = findViewById(R.id.infoDetail);
+        TextView mailTypeEnv = findViewById(R.id.your_mail);
 
         // Set the text from the Intent extra.
         poBoxTitle.setText(getIntent().getStringExtra("title"));
-        poBoxInfo.setText(getIntent().getStringExtra("info"));
-        */
+        //poBoxInfo.setText(getIntent().getStringExtra("info"));
+        mailTypeEnv.setText(getIntent().getStringExtra("type"));
+
 
     }
 
