@@ -55,7 +55,7 @@ public class SendConfirm extends AppCompatActivity {
     public void launchWrongPOBoxActivity(View view) {
         displayToast(getString(R.string.wrong_po_box));
         Log.d(LOG_TAG, "Push Notification Sent!");
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, RegisteredBoxes.class);
         startActivity(intent);
     }
 }
