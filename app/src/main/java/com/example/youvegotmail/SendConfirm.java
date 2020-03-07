@@ -26,7 +26,7 @@ public class SendConfirm extends AppCompatActivity {
         //TextView poBoxInfo = findViewById(R.id.infoDetail);
 
         // Set the text from the Intent extra.
-        poBoxTitle.setText(getIntent().getStringExtra("title"));
+        poBoxTitle.setText(getIntent().getStringExtra("title")); // why isn't this working?
         mailTypeEnv.setText(getIntent().getStringExtra("type"));
         //poBoxInfo.setText(getIntent().getStringExtra("info"));
 

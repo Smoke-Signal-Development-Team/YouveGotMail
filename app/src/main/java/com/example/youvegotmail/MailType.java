@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class MailType extends AppCompatActivity {
 
     String titleIntent;
@@ -33,6 +34,7 @@ public class MailType extends AppCompatActivity {
         // Set the text from the Intent extra.
         //poBoxTitle.setText(getIntent().getStringExtra("title"));
         poBoxInfo.setText(getIntent().getStringExtra("info"));
+        poBoxTitle.setText(titleIntent);
         String titleIntent = getIntent().getStringExtra("title");
         poBoxTitle.setText(titleIntent);
         //mailTypeEnv.setText(getIntent().getStringExtra(typeE);
@@ -84,7 +86,7 @@ public class MailType extends AppCompatActivity {
         Log.d(LOG_TAG, "Envelope and Package Selected");
         Intent intent = new Intent(this, SendConfirm.class);
         intent.putExtra("title", titleIntent);
-        intent.putExtra("type", "Envelop & Package");
+        intent.putExtra("type", "Envelope & Package");
         //intent.putExtra("title", "P.O. Box# 1006");
 
         startActivity(intent);
