@@ -9,8 +9,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Set;
+
 public class SendConfirm extends AppCompatActivity {
 
+    String titleIntent;
+    String infoIntent;
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
 
@@ -20,15 +24,25 @@ public class SendConfirm extends AppCompatActivity {
         setContentView(R.layout.activity_send_confirm);
 
 
-        // Initialize the views.
+        /* Initialize the views. */
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView mailTypeEnv = findViewById(R.id.your_mail);
-        //TextView poBoxInfo = findViewById(R.id.infoDetail);
+        // TextView poBoxInfo = findViewById(R.id.infoDetail);
 
-        // Set the text from the Intent extra.
-        poBoxTitle.setText(getIntent().getStringExtra("title")); // why isn't this working?
+
+        /* Set the text from the Intent extra. */
+        // Gets the mail type
         mailTypeEnv.setText(getIntent().getStringExtra("type"));
-        //poBoxInfo.setText(getIntent().getStringExtra("info"));
+
+        // Gets the PO Box #
+        // poBoxTitle.setText(getIntent().getStringExtra("title"));
+        titleIntent = getIntent().getStringExtra("title");
+        poBoxTitle.setText(titleIntent);
+
+        // Gets the name
+        // poBoxInfo.setText(getIntent().getStringExtra("info"));
+        infoIntent = getIntent().getStringExtra("info");
+        
 
     }
 
@@ -36,7 +50,7 @@ public class SendConfirm extends AppCompatActivity {
 
     public void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message,
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_SHORT).show();
     }
 
     public void launchConfirmSendActivity(View view) {
@@ -50,6 +64,9 @@ public class SendConfirm extends AppCompatActivity {
         displayToast(getString(R.string.wrong_mail_type));
         Log.d(LOG_TAG, "Wrong Mail Type");
         Intent intent = new Intent(this, MailType.class);
+        intent.putExtra("title", titleIntent);
+        intent.putExtra("info", infoIntent);
+
         startActivity(intent);
     }
 

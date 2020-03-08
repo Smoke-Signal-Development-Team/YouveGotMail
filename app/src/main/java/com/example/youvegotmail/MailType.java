@@ -12,10 +12,14 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Set;
+
 
 public class MailType extends AppCompatActivity {
 
-    String titleIntent;
+    private String titleIntent;
+    private String infoIntent;
+
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
 
@@ -26,23 +30,32 @@ public class MailType extends AppCompatActivity {
         setContentView(R.layout.activity_mail_type);
 
 
-        // Initialize the views.
+        /* Initialize the views. */
+        // TextView mailTypeEnv = findViewById(R.id.infoDetail); ~ This can probably go
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView poBoxInfo = findViewById(R.id.infoDetail);
-        //TextView mailTypeEnv = findViewById(R.id.infoDetail);
 
-        // Set the text from the Intent extra.
-        //poBoxTitle.setText(getIntent().getStringExtra("title"));
-        poBoxInfo.setText(getIntent().getStringExtra("info"));
+
+        /* Set the text from the Intent extra. */
+        // Gets the PO Box #
+        // poBoxTitle.setText(getIntent().getStringExtra("title"));
+        titleIntent = getIntent().getStringExtra("title");
         poBoxTitle.setText(titleIntent);
-        String titleIntent = getIntent().getStringExtra("title");
-        poBoxTitle.setText(titleIntent);
-        //mailTypeEnv.setText(getIntent().getStringExtra(typeE);
+
+        // Gets the name
+        // mailTypeEnv.setText(getIntent().getStringExtra(typeE); ~ This can probably go
+        // poBoxInfo.setText(getIntent().getStringExtra("info"));
+        infoIntent = getIntent().getStringExtra("info");
+        poBoxInfo.setText(infoIntent);
+
+
+
+
     }
 
     public void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message,
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_SHORT).show();
     }
 
     public void launchEnvConfirmActivity(View view) {
@@ -51,11 +64,13 @@ public class MailType extends AppCompatActivity {
         Intent intent = new Intent(this, SendConfirm.class);
         intent.putExtra("title", titleIntent);
         intent.putExtra("type", "Envelope");
+        intent.putExtra("info", infoIntent);
         //intent.putExtra("title", "P.O. Box# 1006");
         //intent.putExtra("info", "John Wick");
 
         startActivity(intent);
 
+        /*  I don't think we need this.
 
         // Initialize the views.
         //TextView poBoxTitle = findViewById(R.id.titleDetail);
@@ -63,9 +78,11 @@ public class MailType extends AppCompatActivity {
         //TextView poBoxInfo = findViewById(R.id.infoDetail);
 
         // Set the text from the Intent extra.
-        // poBoxTitle.setText(getIntent().getStringExtra("title"));
+        //poBoxTitle.setText(getIntent().getStringExtra("title"));
         //mailTypeEnv.setText(getIntent().getStringExtra("type"));
         //poBoxInfo.setText(getIntent().getStringExtra("info"));
+
+         */
 
     }
 
