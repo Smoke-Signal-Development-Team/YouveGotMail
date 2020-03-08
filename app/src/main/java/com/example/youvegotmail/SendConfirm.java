@@ -27,7 +27,8 @@ public class SendConfirm extends AppCompatActivity {
         /* Initialize the views. */
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView mailTypeEnv = findViewById(R.id.your_mail);
-        // TextView poBoxInfo = findViewById(R.id.infoDetail);
+        TextView poBoxInfo = findViewById(R.id.infoDetail);
+        //TextView poBoxInfo = null;
 
 
         /* Set the text from the Intent extra. */
@@ -42,7 +43,7 @@ public class SendConfirm extends AppCompatActivity {
         // Gets the name
         // poBoxInfo.setText(getIntent().getStringExtra("info"));
         infoIntent = getIntent().getStringExtra("info");
-        
+        poBoxInfo.setText(infoIntent);
 
     }
 

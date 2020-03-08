@@ -63,8 +63,9 @@ public class MailType extends AppCompatActivity {
         Log.d(LOG_TAG, "Envelope Selected");
         Intent intent = new Intent(this, SendConfirm.class);
         intent.putExtra("title", titleIntent);
-        intent.putExtra("type", "Envelope");
         intent.putExtra("info", infoIntent);
+        intent.putExtra("type", "Envelope");
+
         //intent.putExtra("title", "P.O. Box# 1006");
         //intent.putExtra("info", "John Wick");
 
@@ -91,6 +92,7 @@ public class MailType extends AppCompatActivity {
         Log.d(LOG_TAG, "Package Selected");
         Intent intent = new Intent(this, SendConfirm.class);
         intent.putExtra("title", titleIntent);
+        intent.putExtra("info", infoIntent);
         intent.putExtra("type", "Package");
         //intent.putExtra("title", "P.O. Box# 1006");
 
@@ -103,6 +105,7 @@ public class MailType extends AppCompatActivity {
         Log.d(LOG_TAG, "Envelope and Package Selected");
         Intent intent = new Intent(this, SendConfirm.class);
         intent.putExtra("title", titleIntent);
+        intent.putExtra("info", infoIntent);
         intent.putExtra("type", "Envelope & Package");
         //intent.putExtra("title", "P.O. Box# 1006");
 
