@@ -54,7 +54,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleDetail"
         app:layout_constraintVertical_bias="0.064" />
-        app:layout_constraintVertical_bias="0.32" />
 
 
     <TextView
@@ -71,8 +70,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correct_text"
         app:layout_constraintVertical_bias="0.176" />
-        app:layout_constraintVertical_bias="0.085" />
-
 
     <Button
         android:id="@+id/confirm_send_button"
@@ -82,8 +79,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="228dp"
-        android:layout_marginBottom="156dp"
+        android:layout_marginBottom="196dp"
         android:background="#9E9D24"
         android:onClick="launchConfirmSendActivity"
         android:text="@string/confirm_send"
@@ -92,14 +88,14 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/wrong_mail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="#D84315"
         android:onClick="launchWrongTypeActivity"
         android:text="@string/wrong_mail_button"
@@ -115,6 +111,7 @@
         android:id="@+id/wrong_po_box"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:background="#FF8F00"
         android:onClick="launchWrongPOBoxActivity"
         android:text="@string/wrong_box_text"
@@ -122,11 +119,10 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/confirm_send_button"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/confirm_send_button"
+        app:layout_constraintEnd_toEndOf="@+id/wrong_mail"
+        app:layout_constraintStart_toStartOf="@+id/wrong_mail"
         app:layout_constraintTop_toBottomOf="@+id/wrong_mail"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintVertical_bias="0.178" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
