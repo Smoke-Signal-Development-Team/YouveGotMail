@@ -85,6 +85,7 @@ public class MailType extends AppCompatActivity {
 
          */
 
+
     }
 
     public void launchPkgConfirmActivity(View view) {
