@@ -2,17 +2,21 @@ package com.example.youvegotmail;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-public class RegisteredBoxes extends AppCompatActivity {
+public class RegisteredBoxes extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private ArrayList<POBoxes> poBoxData;
     private POBoxAdapter mAdapter;
@@ -92,6 +96,14 @@ public class RegisteredBoxes extends AppCompatActivity {
         helper.attachToRecyclerView(mRecyclerView);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu){
+        getMenuInflater().inflate(R.menu.toolbar_menu,menu);
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setOnQueryTextListener(this);
+        return true;
+    }
 
     private void initializeData() {
         // Get the resources from the XML file.
@@ -125,5 +137,25 @@ public class RegisteredBoxes extends AppCompatActivity {
      */
     public void resetpoBoxes(View view) {
         initializeData();
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        String userInput = newText.toLowerCase();
+        List<POBoxes> newList = new ArrayList<>();
+
+        for (POBoxes poBoxes : poBoxData) {
+            String pobox_titles = POBoxes.getTitle().toLowerCase();
+            if(pobox_titles.contains(userInput)) {
+                newList.add(poBoxes);
+            }
+        }
+        mAdapter.updateArrayList(newList);
+        return false;
     }
 }

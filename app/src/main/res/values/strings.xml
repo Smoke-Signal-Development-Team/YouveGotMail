@@ -32,6 +32,7 @@
     <string name="type">type</string>
     <string name="mailbox_full_button_text">Mailbox Full</string>
     <string name="mailbox_full_push">Mailbox Full Notification Sent!</string>
+    <string name="search">Search</string>
 
 
     <string-array name="pobox_titles">
