@@ -39,8 +39,13 @@ public class RegisteredBoxes extends AppCompatActivity {
         mAdapter = new POBoxAdapter(this, poBoxData);
         mRecyclerView.setAdapter(mAdapter);
 
-        // Get the data.
-        initializeData();
+       /* // Get the data.
+        initializeData(); */
+       poBoxData.add(new POBoxes(getString(R.string.po_box_1001), getString(R.string.name_box_1001), R.drawable.img_connor));
+       poBoxData.add(new POBoxes(getString(R.string.po_box_1002), getString(R.string.name_box_1002), R.drawable.img_picard));
+       poBoxData.add(new POBoxes(getString(R.string.po_box_1003), getString(R.string.name_box_1003), R.drawable.img_sarah_connor));
+       poBoxData.add(new POBoxes(getString(R.string.po_box_1004), getString(R.string.name_box_1004), R.drawable.img_johnny_five));
+       poBoxData.add(new POBoxes(getString(R.string.po_box_1005), getString(R.string.name_box_1005), R.drawable.img_theodore_logan));
 
         // If there is more than one column, disable swipe to dismiss
         int swipeDirs;
@@ -93,7 +98,7 @@ public class RegisteredBoxes extends AppCompatActivity {
     }
 
 
-    private void initializeData() {
+    /* private void initializeData() {
         // Get the resources from the XML file.
         String[] poBoxList = getResources()
                 .getStringArray(R.array.pobox_titles);
@@ -116,14 +121,6 @@ public class RegisteredBoxes extends AppCompatActivity {
 
         // Notify the adapter of the change.
         mAdapter.notifyDataSetChanged();
-    }
+    } */
 
-    /**
-     * onClick method for th FAB that resets the data.
-     *
-     * @param view The button view that was clicked.
-     */
-    public void resetpoBoxes(View view) {
-        initializeData();
-    }
 }
