@@ -40,14 +40,12 @@ package="com.example.youvegotmail">
         <activity
             android:name=".ManualInput"
             android:label="@string/title_activity_manual_activity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:parentActivityName=".MainActivity" />
 
         <activity
             android:name=".Scan"
             android:label="@string/title_activity_scan_activity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".MainActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
