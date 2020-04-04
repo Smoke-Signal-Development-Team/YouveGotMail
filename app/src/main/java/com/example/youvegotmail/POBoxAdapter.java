@@ -127,13 +127,13 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
         }
     }
 
-    @Override
+    //@Override
     public Filter getFilter() {
         return exampleFilter;
     }
 
     private Filter exampleFilter = new Filter() {
-        @Override
+        //@Override
         protected FilterResults performFiltering(CharSequence constraint) {
             List<POBoxes> filteredList = new ArrayList<>();
 

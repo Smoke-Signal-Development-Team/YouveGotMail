@@ -3,20 +3,20 @@ package com.example.youvegotmail;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
-public class RegisteredBoxes extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class RegisteredBoxes extends AppCompatActivity {
 
     private ArrayList<POBoxes> poBoxData;
     private POBoxAdapter mAdapter;
@@ -43,8 +43,13 @@ public class RegisteredBoxes extends AppCompatActivity implements SearchView.OnQ
         mAdapter = new POBoxAdapter(this, poBoxData);
         mRecyclerView.setAdapter(mAdapter);
 
-        // Get the data.
-        initializeData();
+       /* // Get the data.
+        initializeData(); */
+        poBoxData.add(new POBoxes(getString(R.string.po_box_1001), getString(R.string.name_box_1001), R.drawable.img_connor));
+        poBoxData.add(new POBoxes(getString(R.string.po_box_1002), getString(R.string.name_box_1002), R.drawable.img_picard));
+        poBoxData.add(new POBoxes(getString(R.string.po_box_1003), getString(R.string.name_box_1003), R.drawable.img_sarah_connor));
+        poBoxData.add(new POBoxes(getString(R.string.po_box_1004), getString(R.string.name_box_1004), R.drawable.img_johnny_five));
+        poBoxData.add(new POBoxes(getString(R.string.po_box_1005), getString(R.string.name_box_1005), R.drawable.img_theodore_logan));
 
         // If there is more than one column, disable swipe to dismiss
         int swipeDirs;
@@ -97,15 +102,29 @@ public class RegisteredBoxes extends AppCompatActivity implements SearchView.OnQ
     }
 
     @Override
-    public boolean onCreateOptionsMenu (Menu menu){
-        getMenuInflater().inflate(R.menu.toolbar_menu,menu);
-        MenuItem menuItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) menuItem.getActionView();
-        searchView.setOnQueryTextListener(this);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
         return true;
     }
 
-    private void initializeData() {
+    /* private void initializeData() {
         // Get the resources from the XML file.
         String[] poBoxList = getResources()
                 .getStringArray(R.array.pobox_titles);
@@ -128,34 +147,6 @@ public class RegisteredBoxes extends AppCompatActivity implements SearchView.OnQ
 
         // Notify the adapter of the change.
         mAdapter.notifyDataSetChanged();
-    }
+    } */
 
-    /**
-     * onClick method for th FAB that resets the data.
-     *
-     * @param view The button view that was clicked.
-     */
-    public void resetpoBoxes(View view) {
-        initializeData();
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        String userInput = newText.toLowerCase();
-        List<POBoxes> newList = new ArrayList<>();
-
-        for (POBoxes poBoxes : poBoxData) {
-            String pobox_titles = POBoxes.getTitle().toLowerCase();
-            if(pobox_titles.contains(userInput)) {
-                newList.add(poBoxes);
-            }
-        }
-        mAdapter.updateArrayList(newList);
-        return false;
-    }
 }
