@@ -32,8 +32,18 @@
     <string name="type">type</string>
     <string name="mailbox_full_button_text">Mailbox Full</string>
     <string name="mailbox_full_push">Mailbox Full Notification Sent!</string>
-    <string name="search">Search</string>
+    <string name="po_box_1001">1001</string>
+    <string name="po_box_1002">1002</string>
+    <string name="po_box_1003">1003</string>
+    <string name="po_box_1004">1004</string>
+    <string name="po_box_1005">1005</string>
+    <string name="name_box_1001">Connor MacLeod</string>
+    <string name="name_box_1002">Jean-Luc Picard</string>
+    <string name="name_box_1003">Sarah Connor</string>
+    <string name="name_box_1004">Johnny Five</string>
+    <string name="name_box_1005">Theodore Logan</string>
 
+    <!-- Used to populate data array instead of list
 
     <string-array name="pobox_titles">
         <item>P.O. Box# 1001</item>
@@ -58,6 +68,6 @@
         <item>@drawable/img_sarah_connor</item>
         <item>@drawable/img_johnny_five</item>
         <item>@drawable/img_theodore_logan</item>
-    </array>
+    </array> -->
 
 </resources>
