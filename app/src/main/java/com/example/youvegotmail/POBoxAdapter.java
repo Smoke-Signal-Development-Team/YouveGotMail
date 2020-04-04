@@ -6,20 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
+class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> implements Filterable {
 
     // Member variables.
     private ArrayList<POBoxes> poBoxData;
+    private List<POBoxes> poBoxDataFull;
     private Context mContext;
-    private ArrayList<POBoxes> poBoxDataFull;
 
     POBoxAdapter(Context context, ArrayList<POBoxes> poBoxData) {
         this.poBoxData = poBoxData;
@@ -127,13 +129,13 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
         }
     }
 
-    //@Override
+    @Override
     public Filter getFilter() {
         return exampleFilter;
     }
 
     private Filter exampleFilter = new Filter() {
-        //@Override
+        @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             List<POBoxes> filteredList = new ArrayList<>();
 
