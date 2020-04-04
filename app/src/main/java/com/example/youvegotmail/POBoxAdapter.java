@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,16 +14,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import java.util.ArrayList;
+import java.util.List;
 
-class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
+class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> implements Filterable {
 
     // Member variables.
     private ArrayList<POBoxes> poBoxData;
+    private List<POBoxes> poBoxDataFull;
     private Context mContext;
 
     POBoxAdapter(Context context, ArrayList<POBoxes> poBoxData) {
         this.poBoxData = poBoxData;
         this.mContext = context;
+        poBoxDataFull = new ArrayList<>(poBoxData);
     }
 
 
@@ -123,4 +128,41 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
             mContext.startActivity(detailIntent);
         }
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<POBoxes> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(poBoxDataFull);
+            }
+            else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (POBoxes item : poBoxDataFull) {
+                    if(item.getTitle().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            poBoxData.clear();
+            poBoxData.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 }
