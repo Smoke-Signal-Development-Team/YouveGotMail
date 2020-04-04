@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -18,10 +19,12 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
     // Member variables.
     private ArrayList<POBoxes> poBoxData;
     private Context mContext;
+    private ArrayList<POBoxes> poBoxDataFull;
 
     POBoxAdapter(Context context, ArrayList<POBoxes> poBoxData) {
         this.poBoxData = poBoxData;
         this.mContext = context;
+        
     }
 
 
@@ -124,9 +127,40 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
         }
     }
 
-    public void updateArrayList(List<POBoxes> newArrayList) {
-        poBoxData = new ArrayList<>();
-        poBoxData.addAll(newArrayList);
-        notifyDataSetChanged();
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
     }
+
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<POBoxes> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(poBoxDataFull);
+            }
+            else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (POBoxes item : poBoxDataFull) {
+                    if(item.getTitle().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            poBoxData.clear();
+            poBoxData.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 }
