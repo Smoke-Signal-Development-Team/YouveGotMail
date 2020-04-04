@@ -24,7 +24,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder>  {
     POBoxAdapter(Context context, ArrayList<POBoxes> poBoxData) {
         this.poBoxData = poBoxData;
         this.mContext = context;
-        
+        poBoxDataFull = new ArrayList<>(poBoxData);
     }
 
 
