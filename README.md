@@ -1,7 +1,7 @@
 You've Got Mail!
 ==================================
 
-The App that does blah blah blah...
+The App that informs customers that they have mail in their P.O. Box.
 
 Introduction
 ------------
