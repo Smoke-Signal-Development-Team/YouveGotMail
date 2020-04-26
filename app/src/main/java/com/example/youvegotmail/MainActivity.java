@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void manualInput(View view) {
         Log.d(LOG_TAG, "Manual Button clicked!");
-        Intent intent = new Intent(this, ManualInput.class);
+        Intent intent = new Intent(this, RegisteredBoxes.class);
         startActivity(intent);
     }
 
