@@ -23,7 +23,7 @@ public class RegisteredBoxes extends AppCompatActivity {
     private ArrayList<POBoxes> poBoxData;
     private POBoxAdapter mAdapter;
     TextView textview;
-
+    private RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class RegisteredBoxes extends AppCompatActivity {
                 getResources().getInteger(R.integer.grid_column_count);
         // Initialize the RecyclerView.
         // Member variables.
-        RecyclerView mRecyclerView = findViewById(R.id.recyclerView);
+        RecyclerView mRecyclerView = findViewById(R.id.r_box_list);
 
         // Set the Layout Manager.
         mRecyclerView.setLayoutManager(new
@@ -41,6 +41,8 @@ public class RegisteredBoxes extends AppCompatActivity {
 
         // Initialize the ArrayList that will contain the data.
         poBoxData = new ArrayList<>();
+        recyclerView = findViewById(R.id.r_box_list);
+        recyclerView.setAdapter(mAdapter);
 
         // Initialize the adapter and set it to the RecyclerView.
         mAdapter = new POBoxAdapter(this, poBoxData);
@@ -135,13 +137,16 @@ public class RegisteredBoxes extends AppCompatActivity {
 
         for (POBoxes item : poBoxData) {
             if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
-                textview = findViewById(R.id.title);
+                textview = findViewById(R.id.overView);
+                recyclerView.setVisibility(View.VISIBLE);
+                textview.setVisibility(View.GONE);
                 filteredList.add(item);
                 mAdapter.filterList(filteredList);
-            } else if (filteredList.isEmpty()) {
-                textview = findViewById(R.id.title);
+            }
+            else if (filteredList.isEmpty()) {
+                textview = findViewById(R.id.overView);
+                recyclerView.setVisibility(View.GONE);
                 textview.setVisibility(View.VISIBLE);
-
             }
         }
     }
