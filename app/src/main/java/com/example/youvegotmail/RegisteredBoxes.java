@@ -141,7 +141,6 @@ public class RegisteredBoxes extends AppCompatActivity {
         for (POBoxes item : poBoxData) {
             if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
                 textview = findViewById(R.id.title);
-                textview.setVisibility(View.GONE);
                 filteredList.add(item);
                 mAdapter.filterList(filteredList);
             } else if (filteredList.isEmpty()) {
