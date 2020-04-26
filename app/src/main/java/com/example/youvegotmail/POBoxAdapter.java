@@ -9,7 +9,6 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
@@ -129,6 +128,10 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
         }
     }
 
+    public void filterList(ArrayList<POBoxes> filteredList) {
+        poBoxData = filteredList;
+        notifyDataSetChanged();
+    }
     @Override
     public Filter getFilter() {
         return exampleFilter;
@@ -165,4 +168,5 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
             notifyDataSetChanged();
         }
     };
+
 }

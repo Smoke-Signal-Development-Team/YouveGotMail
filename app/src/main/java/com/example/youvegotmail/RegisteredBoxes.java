@@ -1,13 +1,15 @@
 package com.example.youvegotmail;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.SearchView;
-
+import androidx.appcompat.widget.SearchView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -20,7 +22,8 @@ public class RegisteredBoxes extends AppCompatActivity {
 
     private ArrayList<POBoxes> poBoxData;
     private POBoxAdapter mAdapter;
-
+    TextView textview;
+    private RecyclerView mRecyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,8 +109,16 @@ public class RegisteredBoxes extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.example_menu, menu);
 
+        SearchManager searchManager = (SearchManager)
+                getSystemService(Context.SEARCH_SERVICE);
+
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
+
+        if (searchManager != null) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        }
+        searchView.setSubmitButtonEnabled(true);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -117,13 +128,29 @@ public class RegisteredBoxes extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                mAdapter.getFilter().filter(newText);
+                filter(newText);
                 return false;
             }
         });
         return true;
     }
 
+    private void filter(String text) {
+        ArrayList<POBoxes> filteredList = new ArrayList<>();
+
+        for (POBoxes item : poBoxData) {
+            if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
+                textview = findViewById(R.id.title);
+                textview.setVisibility(View.GONE);
+                filteredList.add(item);
+                mAdapter.filterList(filteredList);
+            } else if (filteredList.isEmpty()) {
+                textview = findViewById(R.id.title);
+                textview.setVisibility(View.VISIBLE);
+
+            }
+        }
+    }
     /* private void initializeData() {
         // Get the resources from the XML file.
         String[] poBoxList = getResources()

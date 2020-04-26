@@ -42,7 +42,7 @@
     <string name="name_box_1003">Sarah Connor</string>
     <string name="name_box_1004">Johnny Five</string>
     <string name="name_box_1005">Theodore Logan</string>
-
+    <string name="textview">custom_text</string>
     <!-- Used to populate data array instead of list
 
     <string-array name="pobox_titles">
