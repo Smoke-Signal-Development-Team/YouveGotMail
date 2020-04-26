@@ -18,7 +18,7 @@ package="com.example.youvegotmail">
 
         <activity android:name=".RegisteredBoxes"
             android:label = "@string/registered_boxes"
-            android:parentActivityName=".ManualInput"></activity>
+            android:parentActivityName=".MainActivity"></activity>
 
         <activity
             android:name=".Scan"
