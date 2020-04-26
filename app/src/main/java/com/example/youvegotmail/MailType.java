@@ -7,13 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-
-import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Set;
-
 
 public class MailType extends AppCompatActivity {
 
@@ -23,18 +18,15 @@ public class MailType extends AppCompatActivity {
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mail_type);
 
-
         /* Initialize the views. */
         // TextView mailTypeEnv = findViewById(R.id.infoDetail); ~ This can probably go
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView poBoxInfo = findViewById(R.id.infoDetail);
-
 
         /* Set the text from the Intent extra. */
         // Gets the PO Box #
@@ -47,10 +39,6 @@ public class MailType extends AppCompatActivity {
         // poBoxInfo.setText(getIntent().getStringExtra("info"));
         infoIntent = getIntent().getStringExtra("info");
         poBoxInfo.setText(infoIntent);
-
-
-
-
     }
 
     public void displayToast(String message) {
@@ -66,26 +54,7 @@ public class MailType extends AppCompatActivity {
         intent.putExtra("info", infoIntent);
         intent.putExtra("type", "Envelope");
 
-        //intent.putExtra("title", "P.O. Box# 1006");
-        //intent.putExtra("info", "John Wick");
-
         startActivity(intent);
-
-        /*  I don't think we need this.
-
-        // Initialize the views.
-        //TextView poBoxTitle = findViewById(R.id.titleDetail);
-        //TextView mailTypeEnv = findViewById(R.id.your_mail);
-        //TextView poBoxInfo = findViewById(R.id.infoDetail);
-
-        // Set the text from the Intent extra.
-        //poBoxTitle.setText(getIntent().getStringExtra("title"));
-        //mailTypeEnv.setText(getIntent().getStringExtra("type"));
-        //poBoxInfo.setText(getIntent().getStringExtra("info"));
-
-         */
-
-
     }
 
     public void launchPkgConfirmActivity(View view) {
@@ -95,10 +64,8 @@ public class MailType extends AppCompatActivity {
         intent.putExtra("title", titleIntent);
         intent.putExtra("info", infoIntent);
         intent.putExtra("type", "Package");
-        //intent.putExtra("title", "P.O. Box# 1006");
 
         startActivity(intent);
-
     }
 
     public void launchEnvPkgConfirmActivity(View view) {
@@ -108,7 +75,6 @@ public class MailType extends AppCompatActivity {
         intent.putExtra("title", titleIntent);
         intent.putExtra("info", infoIntent);
         intent.putExtra("type", "Envelope & Package");
-        //intent.putExtra("title", "P.O. Box# 1006");
 
         startActivity(intent);
     }

@@ -24,13 +24,16 @@ public class RegisteredBoxes extends AppCompatActivity {
     private POBoxAdapter mAdapter;
     TextView textview;
     private RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registered_boxes);
 
         int gridColumnCount =
                 getResources().getInteger(R.integer.grid_column_count);
+
         // Initialize the RecyclerView.
         // Member variables.
         RecyclerView mRecyclerView = findViewById(R.id.r_box_list);
@@ -87,6 +90,7 @@ public class RegisteredBoxes extends AppCompatActivity {
              * @param viewHolder The viewholder being swiped.
              * @param direction The direction it is swiped in.
              */
+
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder,
                                  int direction) {
@@ -103,18 +107,18 @@ public class RegisteredBoxes extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.example_menu, menu);
-
         SearchManager searchManager = (SearchManager)
                 getSystemService(Context.SEARCH_SERVICE);
-
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
 
         if (searchManager != null) {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         }
+
         searchView.setSubmitButtonEnabled(true);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -133,6 +137,7 @@ public class RegisteredBoxes extends AppCompatActivity {
     }
 
     private void filter(String text) {
+
         ArrayList<POBoxes> filteredList = new ArrayList<>();
 
         for (POBoxes item : poBoxData) {
@@ -151,6 +156,7 @@ public class RegisteredBoxes extends AppCompatActivity {
         }
     }
      private void initializeData() {
+
         // Get the resources from the XML file.
         String[] poBoxList = getResources()
                 .getStringArray(R.array.pobox_titles);
@@ -161,7 +167,6 @@ public class RegisteredBoxes extends AppCompatActivity {
 
         // Clear the existing data (to avoid duplication).
         poBoxData.clear();
-
 
         for (int i = 0; i < poBoxList.length; i++) {
             poBoxData.add(new POBoxes(poBoxList[i], poBoxInfo[i],

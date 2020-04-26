@@ -15,35 +15,10 @@ package="com.example.youvegotmail">
 
         <activity android:name=".MailType"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <!-- is this the correct parent activity?
-        <activity
-            android:name=".SendConfirm"
-            android:label = "Send and Confirm"
-            android:parentActivityName=".MainActivity">
-        </activity>
-        -->
-
-        <!-- is this the correct parent activity?
-        <activity android:name=".MailType"
-            android:label = "Mail Type"
-            android:parentActivityName=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-         -->
-
 
         <activity android:name=".RegisteredBoxes"
             android:label = "@string/registered_boxes"
             android:parentActivityName=".ManualInput"></activity>
-
-        <activity
-            android:name=".ManualInput"
-            android:label="@string/title_activity_manual_activity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
             android:name=".Scan"

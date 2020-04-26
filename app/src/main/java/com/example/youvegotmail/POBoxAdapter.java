@@ -28,7 +28,6 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
         poBoxDataFull = new ArrayList<>(poBoxData);
     }
 
-
     /**
      * Required method for creating the viewholder objects.
      *
@@ -37,6 +36,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
      * @param viewType The view type of the new View.
      * @return The newly created ViewHolder.
      */
+
     @NonNull
     @Override
     public POBoxAdapter.ViewHolder onCreateViewHolder(
@@ -51,6 +51,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
      * @param holder The viewholder into which the data should be put.
      * @param position The adapter position.
      */
+
     @Override
     public void onBindViewHolder(POBoxAdapter.ViewHolder holder,
                                  int position) {
@@ -66,15 +67,16 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
      *
      * @return Size of the data set.
      */
+
     @Override
     public int getItemCount() {
         return poBoxData.size();
     }
 
-
     /**
      * ViewHolder class that represents each row of data in the RecyclerView.
      */
+
     class ViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener{
 
@@ -88,6 +90,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
          *
          * @param itemView The rootview of the list_item.xml layout file.
          */
+
         ViewHolder(View itemView) {
             super(itemView);
 
@@ -115,6 +118,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
          *
          * @param view View that is clicked.
          */
+
         @Override
         public void onClick(View view) {
             POBoxes currentPOBoxes = poBoxData.get(getAdapterPosition());
@@ -132,6 +136,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
         poBoxData = filteredList;
         notifyDataSetChanged();
     }
+
     @Override
     public Filter getFilter() {
         return exampleFilter;
@@ -140,6 +145,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
     private Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
+
             List<POBoxes> filteredList = new ArrayList<>();
 
             if (constraint == null || constraint.length() == 0) {

@@ -1,15 +1,12 @@
 package com.example.youvegotmail;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Set;
 
 public class SendConfirm extends AppCompatActivity {
 
@@ -23,13 +20,11 @@ public class SendConfirm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_confirm);
 
-
         /* Initialize the views. */
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView mailTypeEnv = findViewById(R.id.your_mail);
         TextView poBoxInfo = findViewById(R.id.infoDetail);
         //TextView poBoxInfo = null;
-
 
         /* Set the text from the Intent extra. */
         // Gets the mail type
@@ -44,10 +39,7 @@ public class SendConfirm extends AppCompatActivity {
         // poBoxInfo.setText(getIntent().getStringExtra("info"));
         infoIntent = getIntent().getStringExtra("info");
         poBoxInfo.setText(infoIntent);
-
     }
-
-
 
     public void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message,
@@ -67,7 +59,6 @@ public class SendConfirm extends AppCompatActivity {
         Intent intent = new Intent(this, MailType.class);
         intent.putExtra("title", titleIntent);
         intent.putExtra("info", infoIntent);
-
         startActivity(intent);
     }
 

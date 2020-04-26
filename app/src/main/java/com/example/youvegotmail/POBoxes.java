@@ -3,6 +3,7 @@ package com.example.youvegotmail;
 /**
  * Data model for each row of the RecyclerView
  */
+
 class POBoxes {
 
     // Member variables representing the title and information about the p.o.box.
@@ -20,7 +21,6 @@ class POBoxes {
         return title;
     }
 
-
     String getInfo() {
         return info;
     }
@@ -28,5 +28,4 @@ class POBoxes {
     int getImageResource() {
         return imageResource;
     }
-
 }
