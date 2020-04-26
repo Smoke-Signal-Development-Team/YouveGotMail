@@ -1,9 +1,15 @@
 package com.example.youvegotmail;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-
+import androidx.appcompat.widget.SearchView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -16,7 +22,8 @@ public class RegisteredBoxes extends AppCompatActivity {
 
     private ArrayList<POBoxes> poBoxData;
     private POBoxAdapter mAdapter;
-
+    TextView textview;
+    private RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +33,7 @@ public class RegisteredBoxes extends AppCompatActivity {
                 getResources().getInteger(R.integer.grid_column_count);
         // Initialize the RecyclerView.
         // Member variables.
-        RecyclerView mRecyclerView = findViewById(R.id.recyclerView);
+        RecyclerView mRecyclerView = findViewById(R.id.r_box_list);
 
         // Set the Layout Manager.
         mRecyclerView.setLayoutManager(new
@@ -34,6 +41,8 @@ public class RegisteredBoxes extends AppCompatActivity {
 
         // Initialize the ArrayList that will contain the data.
         poBoxData = new ArrayList<>();
+        recyclerView = findViewById(R.id.r_box_list);
+        recyclerView.setAdapter(mAdapter);
 
         // Initialize the adapter and set it to the RecyclerView.
         mAdapter = new POBoxAdapter(this, poBoxData);
@@ -92,8 +101,56 @@ public class RegisteredBoxes extends AppCompatActivity {
         helper.attachToRecyclerView(mRecyclerView);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
 
-    private void initializeData() {
+        SearchManager searchManager = (SearchManager)
+                getSystemService(Context.SEARCH_SERVICE);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+
+        if (searchManager != null) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        }
+        searchView.setSubmitButtonEnabled(true);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText);
+                return false;
+            }
+        });
+        return true;
+    }
+
+    private void filter(String text) {
+        ArrayList<POBoxes> filteredList = new ArrayList<>();
+
+        for (POBoxes item : poBoxData) {
+            if (item.getTitle().toLowerCase().contains(text.toLowerCase())) {
+                textview = findViewById(R.id.overView);
+                recyclerView.setVisibility(View.VISIBLE);
+                textview.setVisibility(View.GONE);
+                filteredList.add(item);
+                mAdapter.filterList(filteredList);
+            }
+            else if (filteredList.isEmpty()) {
+                textview = findViewById(R.id.overView);
+                recyclerView.setVisibility(View.GONE);
+                textview.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+     private void initializeData() {
         // Get the resources from the XML file.
         String[] poBoxList = getResources()
                 .getStringArray(R.array.pobox_titles);
@@ -118,12 +175,4 @@ public class RegisteredBoxes extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
-    /**
-     * onClick method for th FAB that resets the data.
-     *
-     * @param view The button view that was clicked.
-     */
-    public void resetpoBoxes(View view) {
-        initializeData();
-    }
 }

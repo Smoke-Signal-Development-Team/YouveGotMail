@@ -7,7 +7,7 @@
     tools:context=".RegisteredBoxes">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/r_box_list"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,4 +16,13 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"/>
 
+    <TextView
+        android:id="@+id/overView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="160sp"
+        android:paddingTop="400sp"
+        android:text="@string/no_results_found"
+        android:visibility="gone"/>
 </RelativeLayout>
