@@ -23,7 +23,7 @@ public class RegisteredBoxes extends AppCompatActivity {
     private ArrayList<POBoxes> poBoxData;
     private POBoxAdapter mAdapter;
     TextView textview;
-    private RecyclerView mRecyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
