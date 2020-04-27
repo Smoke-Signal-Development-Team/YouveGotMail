@@ -52,9 +52,16 @@
         <item>P.O. Box# 1003</item>
         <item>P.O. Box# 1004</item>
         <item>P.O. Box# 1005</item>
-        <item>P.O. Box# 1006</item>
-        <item>P.O. Box# 1007</item>
-        <item>P.O. Box# 1008</item>
+        <item>P.O. Box# 2001</item>
+        <item>P.O. Box# 2002</item>
+        <item>P.O. Box# 2003</item>
+        <item>P.O. Box# 2004</item>
+        <item>P.O. Box# 2005</item>
+        <item>P.O. Box# 3001</item>
+        <item>P.O. Box# 3002</item>
+        <item>P.O. Box# 3003</item>
+        <item>P.O. Box# 3004</item>
+        <item>P.O. Box# 3005</item>
     </string-array>
 
     <string-array name="pobox_info">
@@ -63,20 +70,34 @@
         <item>Sarah Connor</item>
         <item>Johnny Five</item>
         <item>Theodore Logan</item>
-        <item>Test1</item>
-        <item>Test2</item>
-        <item>Test3</item>
+        <item>Lara Croft</item>
+        <item>Shana O-Hara</item>
+        <item>Han Solo</item>
+        <item>Moana Waialiki</item>
+        <item>Tony Stark</item>
+        <item>Optimus Prime</item>
+        <item>Hermione Granger</item>
+        <item>Frodo Baggins</item>
+        <item>Isaac Asimov</item>
+        <item>Ororo Munroe</item>
     </string-array>
 
 
     <array name="pobox_images">
-        <item>@drawable/img_connor</item>
-        <item>@drawable/img_picard</item>
-        <item>@drawable/img_sarah_connor</item>
-        <item>@drawable/img_johnny_five</item>
-        <item>@drawable/img_theodore_logan</item>
+        <item>@drawable/img_test1</item>
+        <item>@drawable/img_test1</item>
+        <item>@drawable/img_test1</item>
+        <item>@drawable/img_test1</item>
         <item>@drawable/img_test1</item>
         <item>@drawable/img_test2</item>
+        <item>@drawable/img_test2</item>
+        <item>@drawable/img_test2</item>
+        <item>@drawable/img_test2</item>
+        <item>@drawable/img_test2</item>
+        <item>@drawable/img_test3</item>
+        <item>@drawable/img_test3</item>
+        <item>@drawable/img_test3</item>
+        <item>@drawable/img_test3</item>
         <item>@drawable/img_test3</item>
     </array>
 
