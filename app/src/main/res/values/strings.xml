@@ -85,19 +85,19 @@
 
     <array name="pobox_images">
         <item>@drawable/img_test1</item>
-        <item>@drawable/img_test1</item>
-        <item>@drawable/img_test1</item>
-        <item>@drawable/img_test1</item>
-        <item>@drawable/img_test1</item>
-        <item>@drawable/img_test2</item>
-        <item>@drawable/img_test2</item>
-        <item>@drawable/img_test2</item>
-        <item>@drawable/img_test2</item>
         <item>@drawable/img_test2</item>
         <item>@drawable/img_test3</item>
+        <item>@drawable/img_test1</item>
+        <item>@drawable/img_test2</item>
         <item>@drawable/img_test3</item>
+        <item>@drawable/img_test1</item>
+        <item>@drawable/img_test2</item>
         <item>@drawable/img_test3</item>
+        <item>@drawable/img_test1</item>
+        <item>@drawable/img_test2</item>
         <item>@drawable/img_test3</item>
+        <item>@drawable/img_test1</item>
+        <item>@drawable/img_test2</item>
         <item>@drawable/img_test3</item>
     </array>
 
