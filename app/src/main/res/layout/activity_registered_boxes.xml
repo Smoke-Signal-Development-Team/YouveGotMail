@@ -10,18 +10,12 @@
         android:id="@+id/r_box_list"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"/>
+        android:layout_height="match_parent"/>
 
     <TextView
         android:id="@+id/overView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="160sp"
-        android:paddingTop="400sp"
         android:text="@string/no_results_found"
         android:visibility="gone"/>
 </RelativeLayout>
