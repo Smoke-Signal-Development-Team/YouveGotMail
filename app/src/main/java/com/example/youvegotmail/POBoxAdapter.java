@@ -101,6 +101,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
 
             // Set the OnClickListener to the entire view.
             itemView.setOnClickListener(this);
+
         }
 
         void bindTo(POBoxes currentPOBoxes){
@@ -123,12 +124,18 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
         public void onClick(View view) {
             POBoxes currentPOBoxes = poBoxData.get(getAdapterPosition());
             //Change to DetailActivity.class for future details page
-            Intent detailIntent = new Intent(mContext, MailType.class);
-            detailIntent.putExtra("title", currentPOBoxes.getTitle());
+                Intent detailIntent = new Intent(mContext, MailType.class);
+                detailIntent.putExtra("title", currentPOBoxes.getTitle());
                 /*detailIntent.putExtra("image_resource",
                         currentPOBoxes.getImageResource());*/
-            detailIntent.putExtra("info", currentPOBoxes.getInfo());
-            mContext.startActivity(detailIntent);
+                detailIntent.putExtra("info", currentPOBoxes.getInfo());
+            String mTitle = currentPOBoxes.getTitle();
+            if (mTitle.equals("P.O. Box# 0001")){
+                return;
+            }
+            else {
+                mContext.startActivity(detailIntent);
+            }
         }
     }
 

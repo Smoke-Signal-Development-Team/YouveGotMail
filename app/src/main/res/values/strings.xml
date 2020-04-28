@@ -49,59 +49,59 @@
     <string-array name="pobox_titles">
         <item>P.O. Box# 0001</item>
         <item>P.O. Box# 1001</item>
-        <item>P.O. Box# 1002</item>
-        <item>P.O. Box# 1003</item>
-        <item>P.O. Box# 1004</item>
-        <item>P.O. Box# 1005</item>
         <item>P.O. Box# 2001</item>
-        <item>P.O. Box# 2002</item>
-        <item>P.O. Box# 2003</item>
-        <item>P.O. Box# 2004</item>
-        <item>P.O. Box# 2005</item>
         <item>P.O. Box# 3001</item>
+        <item>P.O. Box# 1002</item>
+        <item>P.O. Box# 2002</item>
         <item>P.O. Box# 3002</item>
+        <item>P.O. Box# 1003</item>
+        <item>P.O. Box# 2003</item>
         <item>P.O. Box# 3003</item>
+        <item>P.O. Box# 1004</item>
+        <item>P.O. Box# 2004</item>
         <item>P.O. Box# 3004</item>
+        <item>P.O. Box# 1005</item>
+        <item>P.O. Box# 2005</item>
         <item>P.O. Box# 3005</item>
     </string-array>
 
     <string-array name="pobox_info">
         <item>Registered Boxes</item>
         <item>Connor MacLeod</item>
-        <item>Jean-Luc Picard</item>
-        <item>Sarah Connor</item>
-        <item>Johnny Five</item>
-        <item>Theodore Logan</item>
         <item>Lara Croft</item>
-        <item>Shana O-Hara</item>
-        <item>Han Solo</item>
-        <item>Moana Waialiki</item>
-        <item>Tony Stark</item>
         <item>Optimus Prime</item>
+        <item>Jean-Luc Picard</item>
+        <item>Shana O\'Hara</item>
         <item>Hermione Granger</item>
+        <item>Sarah Connor</item>
+        <item>Han Solo</item>
         <item>Frodo Baggins</item>
+        <item>Johnny Five</item>
+        <item>Moana Waialiki</item>
         <item>Isaac Asimov</item>
+        <item>Theodore Logan</item>
+        <item>Tony Stark</item>
         <item>Ororo Munroe</item>
     </string-array>
 
 
     <array name="pobox_images">
-        <item>@drawable/card0001</item>
-        <item>@drawable/card1001</item>
-        <item>@drawable/card1002</item>
-        <item>@drawable/card1003</item>
-        <item>@drawable/card1004</item>
-        <item>@drawable/card1005</item>
-        <item>@drawable/card2001</item>
-        <item>@drawable/card2002</item>
-        <item>@drawable/card2003</item>
-        <item>@drawable/card2004</item>
-        <item>@drawable/card2005</item>
-        <item>@drawable/card3001</item>
-        <item>@drawable/card3002</item>
-        <item>@drawable/card3003</item>
-        <item>@drawable/card3004</item>
-        <item>@drawable/card3005</item>
+        <item>@drawable/a0001</item>
+        <item>@drawable/a1001</item>
+        <item>@drawable/a2001</item>
+        <item>@drawable/a3001</item>
+        <item>@drawable/a1002</item>
+        <item>@drawable/a2002</item>
+        <item>@drawable/a3002</item>
+        <item>@drawable/a1003</item>
+        <item>@drawable/a2003</item>
+        <item>@drawable/a3003</item>
+        <item>@drawable/a1004</item>
+        <item>@drawable/a2004</item>
+        <item>@drawable/a3004</item>
+        <item>@drawable/a1005</item>
+        <item>@drawable/a2005</item>
+        <item>@drawable/a3005</item>
     </array>
 
 </resources>
