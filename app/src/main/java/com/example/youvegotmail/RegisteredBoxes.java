@@ -9,6 +9,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.widget.SearchView;
+
+import android.widget.EditText;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -114,6 +116,11 @@ public class RegisteredBoxes extends AppCompatActivity {
                 getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
+        EditText searchEditText = (EditText) searchView.findViewById(com.google.android.material.R.id.search_src_text);
+        searchEditText.setTextColor(getResources().getColor(R.color.colorText));
+        searchEditText.setHintTextColor(getResources().getColor(R.color.colorText));
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         getSupportActionBar().setHomeButtonEnabled(false);
         if (searchManager != null) {

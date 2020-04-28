@@ -47,6 +47,7 @@
     <!-- Used to populate data array instead of list -->
 
     <string-array name="pobox_titles">
+        <item>P.O. Box# 0001</item>
         <item>P.O. Box# 1001</item>
         <item>P.O. Box# 1002</item>
         <item>P.O. Box# 1003</item>
@@ -65,6 +66,7 @@
     </string-array>
 
     <string-array name="pobox_info">
+        <item>Registered Boxes</item>
         <item>Connor MacLeod</item>
         <item>Jean-Luc Picard</item>
         <item>Sarah Connor</item>
@@ -84,21 +86,22 @@
 
 
     <array name="pobox_images">
-        <item>@drawable/img_test1</item>
-        <item>@drawable/img_test2</item>
-        <item>@drawable/img_test3</item>
-        <item>@drawable/img_test1</item>
-        <item>@drawable/img_test2</item>
-        <item>@drawable/img_test3</item>
-        <item>@drawable/img_test1</item>
-        <item>@drawable/img_test2</item>
-        <item>@drawable/img_test3</item>
-        <item>@drawable/img_test1</item>
-        <item>@drawable/img_test2</item>
-        <item>@drawable/img_test3</item>
-        <item>@drawable/img_test1</item>
-        <item>@drawable/img_test2</item>
-        <item>@drawable/img_test3</item>
+        <item>@drawable/card0001</item>
+        <item>@drawable/card1001</item>
+        <item>@drawable/card1002</item>
+        <item>@drawable/card1003</item>
+        <item>@drawable/card1004</item>
+        <item>@drawable/card1005</item>
+        <item>@drawable/card2001</item>
+        <item>@drawable/card2002</item>
+        <item>@drawable/card2003</item>
+        <item>@drawable/card2004</item>
+        <item>@drawable/card2005</item>
+        <item>@drawable/card3001</item>
+        <item>@drawable/card3002</item>
+        <item>@drawable/card3003</item>
+        <item>@drawable/card3004</item>
+        <item>@drawable/card3005</item>
     </array>
 
 </resources>
