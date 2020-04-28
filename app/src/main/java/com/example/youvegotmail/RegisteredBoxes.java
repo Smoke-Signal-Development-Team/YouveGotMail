@@ -9,16 +9,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.widget.SearchView;
-
 import android.widget.EditText;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class RegisteredBoxes extends AppCompatActivity {
 
@@ -55,56 +51,6 @@ public class RegisteredBoxes extends AppCompatActivity {
 
         // Get the data.
         initializeData();
-
-        // If there is more than one column, disable swipe to dismiss
-        int swipeDirs;
-        if(gridColumnCount > 1){
-            swipeDirs = 0;
-        } else {
-            swipeDirs = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
-        }
-
-        // Helper class for creating swipe to dismiss and drag and drop
-        // functionality
-        ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper
-                .SimpleCallback(
-                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT |
-                        ItemTouchHelper.DOWN | ItemTouchHelper.UP,
-                swipeDirs) {
-
-            @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView,
-                                  @NonNull RecyclerView.ViewHolder viewHolder,
-                                  @NonNull RecyclerView.ViewHolder target) {
-                // Get the from and to positions.
-                int from = viewHolder.getAdapterPosition();
-                int to = target.getAdapterPosition();
-
-                // Swap the items and notify the adapter.
-                Collections.swap(poBoxData, from, to);
-                mAdapter.notifyItemMoved(from, to);
-                return true;
-            }
-
-            /**
-             * Defines the swipe to dismiss functionality.
-             *
-             * @param viewHolder The viewholder being swiped.
-             * @param direction The direction it is swiped in.
-             */
-
-            @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder,
-                                 int direction) {
-                // Remove the item from the dataset.
-                poBoxData.remove(viewHolder.getAdapterPosition());
-                // Notify the adapter.
-                mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
-            }
-        });
-
-        // Attach the helper to the RecyclerView.
-        helper.attachToRecyclerView(mRecyclerView);
     }
 
     @Override
