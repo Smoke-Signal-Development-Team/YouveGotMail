@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Scan">
+    tools:context=".Scan"
+    android:background="@drawable/scanemulatebg">
 
     <ImageView
         android:id="@+id/imageView"
@@ -16,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286"
+        app:layout_constraintVertical_bias="0.318"
         app:srcCompat="@drawable/img_scan" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
