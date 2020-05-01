@@ -7,48 +7,6 @@
     tools:context=".MainActivity"
     android:background="@drawable/mainpagebg">
 
-<!--    <Button-->
-<!--        android:id="@+id/scan_button"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="52dp"-->
-<!--        android:layout_marginStart="50dp"-->
-<!--        android:layout_marginLeft="50dp"-->
-<!--        android:layout_marginTop="200dp"-->
-<!--        android:layout_marginEnd="50dp"-->
-<!--        android:layout_marginRight="50dp"-->
-<!--        android:background="#00838F"-->
-<!--        android:onClick="scan"-->
-<!--        android:text="@string/scan"-->
-<!--        android:textColor="#FFFFFF"-->
-<!--        android:textSize="34sp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:visibility="visible"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/man_button"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.6"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/man_button"-->
-<!--        android:layout_width="200dp"-->
-<!--        android:layout_height="45dp"-->
-<!--        android:layout_marginStart="100dp"-->
-<!--        android:layout_marginLeft="100dp"-->
-<!--        android:layout_marginEnd="100dp"-->
-<!--        android:layout_marginRight="100dp"-->
-<!--        android:layout_marginBottom="244dp"-->
-<!--        android:background="#FF8F00"-->
-<!--        android:onClick="manualInput"-->
-<!--        android:text="@string/manual_input"-->
-<!--        android:textColor="#FFFFFF"-->
-<!--        android:textSize="22sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.454"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/scan_button"
@@ -58,13 +16,13 @@
         android:layout_marginEnd="2dp"
         android:contentDescription="@string/scan_button"
         android:onClick="scan"
-        android:src="@drawable/mainscanbutton1"
+        android:src="@drawable/mainscanbutton2"
         app:layout_anchorGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.31" />
 
     <ImageView
         android:id="@+id/man_button"
@@ -82,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/manualinputbutton" />
+        app:layout_constraintVertical_bias="0.974"
+        app:srcCompat="@drawable/manualinputbutton1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
