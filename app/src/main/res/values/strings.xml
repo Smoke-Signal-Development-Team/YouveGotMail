@@ -49,6 +49,8 @@
     <string name="package_button">package_button</string>
     <string name="env_and_pkg_button"><![CDATA[envelop & package button]]></string>
     <string name="mailbox_full_button">mailbox full button</string>
+    <string name="notify_button">yes notify button</string>
+    <string name="wrong_po_box_button">wrong pobox button</string>
     <!-- Used to populate data array instead of list -->
 
     <string-array name="pobox_titles">
