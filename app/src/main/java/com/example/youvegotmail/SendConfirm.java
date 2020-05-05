@@ -2,6 +2,9 @@ package com.example.youvegotmail;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,12 +17,22 @@ public class SendConfirm extends AppCompatActivity {
     String infoIntent;
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
+    //Sound Effect variables
+    private SoundPool soundPool;
+    private int sound1, sound2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_confirm);
 
+        // Sound Effects
+        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+        }
         /* Initialize the views. */
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView mailTypeEnv = findViewById(R.id.your_mail);
