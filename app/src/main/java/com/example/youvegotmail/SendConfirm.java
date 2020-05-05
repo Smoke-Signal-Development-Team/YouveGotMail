@@ -47,6 +47,7 @@ public class SendConfirm extends AppCompatActivity {
 
         sound1 = soundPool.load(this, R.raw.you_got_mail_w, 1);
 
+
         /* Initialize the views. */
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView mailTypeEnv = findViewById(R.id.your_mail);
@@ -74,10 +75,13 @@ public class SendConfirm extends AppCompatActivity {
     }
 
     public void launchConfirmSendActivity(View view) {
+        final ImageView confirmSend;
+        confirmSend = findViewById(R.id.confirm_send_button);;
         displayToast(getString(R.string.confirm_push));
         Log.d(LOG_TAG, "Push Notification Sent!");
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        playSound(confirmSend);
     }
 
     public void launchWrongTypeActivity(View view) {
@@ -98,14 +102,11 @@ public class SendConfirm extends AppCompatActivity {
 
     //Play Sound Effects
     public void playSound(View v) {
-
         switch (v.getId()) {
             case R.id.confirm_send_button:
                 soundPool.play(sound1, 1, 1, 0, 0, 1);
                 break;
         }
-        confirmSend = findViewById(R.id.confirm_send_button);;
-        launchConfirmSendActivity(confirmSend);
     }
 
     @Override

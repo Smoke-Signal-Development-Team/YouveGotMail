@@ -4,9 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,14 +19,35 @@ public class MailType extends AppCompatActivity {
 
     private String titleIntent;
     private String infoIntent;
-
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
+    //Sound Effect variables
+    private SoundPool soundPool;
+    private int sound1, sound2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mail_type);
+
+        // Sound Effects Set Up
+        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(6)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        }
+        else {
+            soundPool = new SoundPool(6, AudioManager.STREAM_MUSIC, 0);
+        }
+
+        //Sound Reference
+        sound1 = soundPool.load(this, R.raw.you_got_mail, 1);
 
         /* Initialize the views. */
         // TextView mailTypeEnv = findViewById(R.id.infoDetail); ~ This can probably go
@@ -80,9 +106,31 @@ public class MailType extends AppCompatActivity {
     }
 
     public void launchMailboxFullActivity(View view) {
+        //Sound Reference
+        final ImageView confirmSend;
+        confirmSend = findViewById(R.id.mailbox_full_button);;
+
         displayToast(getString(R.string.mailbox_full_push));
         Log.d(LOG_TAG, "Mailbox Full Notification Sent!");
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        //Play Sound
+        playSound(confirmSend);
+    }
+
+    //Play Sound Effects
+    public void playSound(View v) {
+        switch (v.getId()) {
+            case R.id.mailbox_full_button:
+                soundPool.play(sound1, 1, 1, 0, 0, 1);
+                break;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        soundPool.release();
+        soundPool = null;
     }
 }
