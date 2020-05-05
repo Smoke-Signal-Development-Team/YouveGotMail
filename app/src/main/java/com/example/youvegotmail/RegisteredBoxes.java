@@ -56,7 +56,7 @@ public class RegisteredBoxes extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
+        //Create the search option
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.example_menu, menu);
         SearchManager searchManager = (SearchManager)
