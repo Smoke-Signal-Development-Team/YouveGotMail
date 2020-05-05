@@ -66,7 +66,7 @@ public class RegisteredBoxes extends AppCompatActivity {
         EditText searchEditText = (EditText) searchView.findViewById(com.google.android.material.R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.colorText));
         searchEditText.setHintTextColor(getResources().getColor(R.color.colorText));
-        searchView.setQueryHint("Enter P.O. Box Number");
+        searchView.setQueryHint(getString(R.string.query_hint));
         searchView.setInputType(InputType.TYPE_CLASS_NUMBER);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayShowTitleEnabled(false);

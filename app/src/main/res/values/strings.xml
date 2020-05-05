@@ -51,8 +51,9 @@
     <string name="mailbox_full_button">mailbox full button</string>
     <string name="notify_button">yes notify button</string>
     <string name="wrong_po_box_button">wrong pobox button</string>
-    <!-- Used to populate data array instead of list -->
+    <string name="query_hint">Enter P.O. Box Number</string>
 
+    <!-- Used to populate data array instead of list -->
     <string-array name="pobox_titles">
         <item>P.O. Box# 0001</item>
         <item>P.O. Box# 1001</item>
