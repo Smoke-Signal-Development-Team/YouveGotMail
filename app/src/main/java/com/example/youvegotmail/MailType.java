@@ -21,6 +21,7 @@ public class MailType extends AppCompatActivity {
     private String infoIntent;
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
+
     //Sound Effect variables
     private SoundPool soundPool;
     private int sound1, sound2;
@@ -42,6 +43,7 @@ public class MailType extends AppCompatActivity {
                     .setAudioAttributes(audioAttributes)
                     .build();
         }
+        //Sound Effect to work on older versions
         else {
             soundPool = new SoundPool(6, AudioManager.STREAM_MUSIC, 0);
         }
