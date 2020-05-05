@@ -98,13 +98,14 @@ public class SendConfirm extends AppCompatActivity {
 
     //Play Sound Effects
     public void playSound(View v) {
-        ImageView View;
+
         switch (v.getId()) {
             case R.id.confirm_send_button:
                 soundPool.play(sound1, 1, 1, 0, 0, 1);
                 break;
         }
-        launchConfirmSendActivity(View);
+        confirmSend = findViewById(R.id.confirm_send_button);;
+        launchConfirmSendActivity(confirmSend);
     }
 
     @Override
