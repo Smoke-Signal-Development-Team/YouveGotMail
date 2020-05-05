@@ -2,9 +2,12 @@ package com.example.youvegotmail;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +42,19 @@ public class SendConfirm extends AppCompatActivity {
         // poBoxInfo.setText(getIntent().getStringExtra("info"));
         infoIntent = getIntent().getStringExtra("info");
         poBoxInfo.setText(infoIntent);
+
+        //Sound Effect
+        final MediaPlayer youGotMailSE = MediaPlayer.create(this, R.raw.you_got_mail_w);
+        final ImageView confirmSend;
+        confirmSend = findViewById(R.id.confirm_send_button);
+        confirmSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                youGotMailSE.start();
+                //Initiate intent after sound effect
+                launchConfirmSendActivity(confirmSend);
+            }
+        });
     }
 
     public void displayToast(String message) {
