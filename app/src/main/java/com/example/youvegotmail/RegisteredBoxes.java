@@ -4,6 +4,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -66,6 +67,7 @@ public class RegisteredBoxes extends AppCompatActivity {
         searchEditText.setTextColor(getResources().getColor(R.color.colorText));
         searchEditText.setHintTextColor(getResources().getColor(R.color.colorText));
         searchView.setQueryHint("Enter P.O. Box Number");
+        searchView.setInputType(InputType.TYPE_CLASS_NUMBER);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
