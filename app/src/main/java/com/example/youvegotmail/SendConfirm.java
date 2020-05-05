@@ -53,7 +53,7 @@ public class SendConfirm extends AppCompatActivity {
                 youGotMailSE.start();
                 //Initiate intent after sound effect
                 launchConfirmSendActivity(confirmSend);
-            }
+        }
         });
     }
 
