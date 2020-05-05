@@ -3,11 +3,14 @@ package com.example.youvegotmail;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.AudioAttributes;
+import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.SoundEffectConstants;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,7 +35,18 @@ public class SendConfirm extends AppCompatActivity {
                     .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .build();
+
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(6)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
         }
+        else {
+            soundPool = new SoundPool(6, AudioManager.STREAM_MUSIC, 0);
+        }
+
+        sound1 = soundPool.load(this, R.raw.you_got_mail_w, 1);
+
         /* Initialize the views. */
         TextView poBoxTitle = findViewById(R.id.titleDetail);
         TextView mailTypeEnv = findViewById(R.id.your_mail);
@@ -80,5 +94,23 @@ public class SendConfirm extends AppCompatActivity {
         Log.d(LOG_TAG, "Push Notification Sent!");
         Intent intent = new Intent(this, RegisteredBoxes.class);
         startActivity(intent);
+    }
+
+    //Play Sound Effects
+    public void playSound(View v) {
+        ImageView View;
+        switch (v.getId()) {
+            case R.id.confirm_send_button:
+                soundPool.play(sound1, 1, 1, 0, 0, 1);
+                break;
+        }
+        launchConfirmSendActivity(View);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        soundPool.release();
+        soundPool = null;
     }
 }
