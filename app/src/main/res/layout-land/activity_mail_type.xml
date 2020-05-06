@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mailtypebg"
+    tools:context="com.example.youvegotmail.MailType">
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/envelope_mail_button"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="48dp"-->
+    <!--        android:layout_marginStart="50dp"-->
+    <!--        android:layout_marginLeft="50dp"-->
+    <!--        android:layout_marginTop="216dp"-->
+    <!--        android:layout_marginEnd="50dp"-->
+    <!--        android:layout_marginRight="50dp"-->
+    <!--        android:background="#00838F"-->
+    <!--        android:onClick="launchEnvConfirmActivity"-->
+    <!--        android:text="@string/envelope_button_text"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <TextView
+        android:id="@+id/titleDetail"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="281dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/hurme_bold"
+        android:padding="16dp"
+        android:text="@string/title_placeholder"
+        android:textColor="@color/colorPrimary"
+        android:textSize="32sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/envelope_mail_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/infoDetail"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="208dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginBottom="38dp"
+        android:fontFamily="@font/hurme_light"
+        android:padding="16dp"
+        android:text="@string/news_placeholder"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/envelope_mail_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toEndOf="@+id/titleDetail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.482" />
+
+    <ImageView
+        android:id="@+id/envelope_mail_button"
+        android:layout_width="227dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="2dp"
+        android:contentDescription="@string/envelope_button"
+        android:onClick="launchEnvConfirmActivity"
+        app:layout_anchorGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.154"
+        app:srcCompat="@drawable/envelopebutton" />
+
+    <!--    <Button-->
+    <!--        android:id="@+id/package_mail_button"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:background="#9E9D24"-->
+    <!--        android:onClick="launchPkgConfirmActivity"-->
+    <!--        android:text="@string/package_button_text"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/envelope_mail_button"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/envelope_mail_button"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/envelope_mail_button" />-->
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/both_mail_button"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="48dp"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:background="#FF8F00"-->
+    <!--        android:onClick="launchEnvPkgConfirmActivity"-->
+    <!--        android:text="@string/envelope_package_button_text"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/envelope_mail_button"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/envelope_mail_button"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/package_mail_button" />-->
+
+
+    <ImageView
+        android:id="@+id/package_mail_button"
+        android:layout_width="220dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="2dp"
+        android:contentDescription="@string/package_button"
+        android:onClick="launchPkgConfirmActivity"
+        app:layout_anchorGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.453"
+        app:srcCompat="@drawable/packagebutton" />
+
+    <ImageView
+        android:id="@+id/both_mail_button"
+        android:layout_width="227dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="2dp"
+        android:contentDescription="@string/env_and_pkg_button"
+        android:onClick="launchEnvPkgConfirmActivity"
+        app:layout_anchorGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.776"
+        app:srcCompat="@drawable/envpkgbutton" />
+
+    <ImageView
+        android:id="@+id/mailbox_full_button"
+        android:layout_width="226dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginEnd="92dp"
+        android:contentDescription="@string/mailbox_full_button"
+        android:onClick="launchMailboxFullActivity"
+        app:layout_anchorGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/both_mail_button"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/mailboxfullbutton" />
+
+    <!--    <Button-->
+    <!--        android:id="@+id/mailbox_full_button"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="48dp"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:background="#EF6C00"-->
+    <!--        android:onClick="launchMailboxFullActivity"-->
+    <!--        android:text="@string/mailbox_full_button_text"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/both_mail_button"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/both_mail_button"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/both_mail_button" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

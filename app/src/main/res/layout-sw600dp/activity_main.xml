@@ -26,8 +26,8 @@
 
     <ImageView
         android:id="@+id/man_button"
-        android:layout_width="276dp"
-        android:layout_height="154dp"
+        android:layout_width="265dp"
+        android:layout_height="109dp"
         android:layout_marginStart="92dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="92dp"
