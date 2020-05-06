@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/confirmbg"
+    tools:context=".SendConfirm">
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/infoDetail"-->
+    <!--        style="@style/TextAppearance.AppCompat.Subhead"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:fontFamily="@font/hurme_regular"-->
+    <!--        android:padding="24dp"-->
+    <!--        android:text="@string/news_placeholder"-->
+    <!--        android:textColor="#8A56AC"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="normal"-->
+    <!--        tools:layout_editor_absoluteX="56dp"-->
+    <!--        tools:layout_editor_absoluteY="232dp"-->
+    <!--        tools:visibility="visible" />-->
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/confirm_send_button"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="50dp"-->
+    <!--        android:layout_marginEnd="50dp"-->
+    <!--        android:layout_marginBottom="304dp"-->
+    <!--        android:background="#00838F"-->
+    <!--        android:onClick="launchConfirmSendActivity"-->
+    <!--        android:text="@string/confirm_send"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.04"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/wrong_mail"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:background="#FF8F00"-->
+    <!--        android:onClick="launchWrongTypeActivity"-->
+    <!--        android:text="@string/wrong_mail_button"-->
+    <!--        android:textColor="#FFFFFF"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/confirm_send_button"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/confirm_send_button"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/confirm_send_button" />-->
+
+    <TextView
+        android:id="@+id/correct_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/hurme_bold"
+        android:text="@string/is_this_correct"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_send_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.192" />
+
+    <TextView
+        android:id="@+id/titleDetail"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hurme_bold"
+        android:text="@string/title_placeholder"
+        android:textColor="#8A56AC"
+        android:textSize="30sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/your_mail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.317" />
+
+    <TextView
+        android:id="@+id/infoDetail"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hurme_regular"
+        android:text="@string/news_placeholder"
+        android:textColor="#8A56AC"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/titleDetail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
+
+    <TextView
+        android:id="@+id/your_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/hurme_black"
+        android:text="@string/mail_type"
+        android:textColor="#8A56AC"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.221" />
+
+    <ImageView
+        android:id="@+id/confirm_send_button"
+        android:layout_width="285dp"
+        android:layout_height="54dp"
+        android:contentDescription="@string/notify_button"
+        android:onClick="launchConfirmSendActivity"
+        app:layout_anchorGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565"
+        app:srcCompat="@drawable/notify" />
+
+
+    <ImageView
+        android:id="@+id/wrong_mail"
+        android:layout_width="285dp"
+        android:layout_height="54dp"
+        android:contentDescription="@string/wrong_mail_button"
+        android:onClick="launchWrongTypeActivity"
+        app:layout_anchorGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
+        app:srcCompat="@drawable/wrongtype" />
+
+    <ImageView
+        android:id="@+id/wrong_po_box"
+        android:layout_width="285dp"
+        android:layout_height="54dp"
+        android:contentDescription="@string/wrong_po_box_button"
+        android:onClick="launchWrongPOBoxActivity"
+        app:layout_anchorGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.983"
+        app:srcCompat="@drawable/wrongbox" />
+
+    <!--    <Button-->
+<!--        android:id="@+id/wrong_po_box"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:background="#EF6C00"-->
+<!--        android:onClick="launchWrongPOBoxActivity"-->
+<!--        android:text="@string/wrong_box_text"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/wrong_mail"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/wrong_mail"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/wrong_mail"-->
+<!--        app:layout_constraintVertical_bias="0.063" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
