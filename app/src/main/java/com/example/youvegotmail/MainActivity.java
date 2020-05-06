@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "Scan Button clicked!");
         Intent intent = new Intent(this, Scan.class);
         startActivity(intent);
+
         //Play Sound
         playSound(confirmSend);
     }
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "Manual Button clicked!");
         Intent intent = new Intent(this, RegisteredBoxes.class);
         startActivity(intent);
+
         //Play Sound
         playSound(confirmSend);
     }

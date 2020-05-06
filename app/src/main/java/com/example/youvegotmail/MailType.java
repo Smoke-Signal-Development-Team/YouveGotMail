@@ -88,6 +88,7 @@ public class MailType extends AppCompatActivity {
         intent.putExtra("info", infoIntent);
         intent.putExtra("type", "Envelope");
         startActivity(intent);
+
         //Play Sound
         playSound(confirmSend);
     }
@@ -104,6 +105,7 @@ public class MailType extends AppCompatActivity {
         intent.putExtra("info", infoIntent);
         intent.putExtra("type", "Package");
         startActivity(intent);
+
         //Play Sound
         playSound(confirmSend);
     }
@@ -120,6 +122,7 @@ public class MailType extends AppCompatActivity {
         intent.putExtra("info", infoIntent);
         intent.putExtra("type", "Envelope & Package");
         startActivity(intent);
+
         //Play Sound
         playSound(confirmSend);
 
@@ -134,6 +137,7 @@ public class MailType extends AppCompatActivity {
         Log.d(LOG_TAG, "Mailbox Full Notification Sent!");
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+
         //Play Sound
         playSound(confirmSend);
     }
