@@ -11,8 +11,8 @@
     <TextView
         android:id="@+id/titleDetail"
         style="@style/TextAppearance.AppCompat.Headline"
-        android:layout_width="351dp"
-        android:layout_height="83dp"
+        android:layout_width="484dp"
+        android:layout_height="88dp"
         android:fontFamily="@font/hurme_bold"
         android:padding="16dp"
         android:text="@string/title_placeholder"
@@ -25,24 +25,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/infoDetail"
-        style="@style/TextAppearance.AppCompat.Subhead"
-        android:layout_width="320dp"
-        android:layout_height="84dp"
-        android:fontFamily="@font/hurme_light"
-        android:padding="16dp"
-        android:text="@string/news_placeholder"
-        android:textColor="#FFFFFF"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/envelope_mail_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736" />
 
     <!--    <Button-->
     <!--        android:id="@+id/envelope_mail_button"-->
@@ -64,6 +46,24 @@
     <!--        app:layout_constraintStart_toStartOf="parent"-->
     <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
+
+    <TextView
+        android:id="@+id/infoDetail"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="480dp"
+        android:layout_height="87dp"
+        android:fontFamily="@font/hurme_light"
+        android:padding="16dp"
+        android:text="@string/news_placeholder"
+        android:textColor="#FFFFFF"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/envelope_mail_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.762" />
 
     <ImageView
         android:id="@+id/envelope_mail_button"
