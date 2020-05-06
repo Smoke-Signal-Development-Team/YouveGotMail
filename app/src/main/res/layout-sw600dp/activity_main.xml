@@ -10,8 +10,8 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/scan_button"
-        android:layout_width="514dp"
-        android:layout_height="433dp"
+        android:layout_width="525dp"
+        android:layout_height="486dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:contentDescription="@string/scan_button"
@@ -20,14 +20,15 @@
         app:layout_anchorGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <ImageView
         android:id="@+id/man_button"
-        android:layout_width="265dp"
-        android:layout_height="109dp"
+        android:layout_width="288dp"
+        android:layout_height="138dp"
         android:layout_marginStart="92dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="92dp"
@@ -39,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
+        app:layout_constraintVertical_bias="0.941"
         app:srcCompat="@drawable/manualinputbutton1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
