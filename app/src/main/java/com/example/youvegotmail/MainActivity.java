@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         sound1 = soundPool.load(this, R.raw.scan_button_sound, 1);
         sound2 = soundPool.load(this, R.raw.manual_input_sound, 1);
 
-
     }
+
 
     public void scan(View view) {
         //Sound Reference
