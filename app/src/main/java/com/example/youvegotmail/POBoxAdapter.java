@@ -135,7 +135,7 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
                 return;
             }
             else {
-                MediaPlayer mediaPlayer = MediaPlayer.create(view.getContext(), R.raw.env_sound);
+                MediaPlayer mediaPlayer = MediaPlayer.create(view.getContext(), R.raw.pobox_sound);
                 mediaPlayer.start();
                 mContext.startActivity(detailIntent);
             }
