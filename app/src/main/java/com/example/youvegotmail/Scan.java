@@ -58,7 +58,7 @@ public class Scan extends AppCompatActivity {
     public void showScanConfirmation(View view) {
         //Sound Reference
         final ImageView confirmSend;
-        confirmSend = findViewById(R.id.scan_button); // This is incorrect
+        confirmSend = findViewById(R.id.imageView); // This is incorrect
 
         displayToast(getString(R.string.scan_confirmation));
         Log.d(LOG_TAG, "Scan Button clicked!");
@@ -74,7 +74,7 @@ public class Scan extends AppCompatActivity {
     //Play Sound Effects
     public void playSound(View v) {
         switch (v.getId()) {
-            case R.id.scan_button: //This is incorrect
+            case R.id.imageView: //This is incorrect
                 soundPool.play(sound1, 1, 1, 0, 0, 1);
                 break;
         }
