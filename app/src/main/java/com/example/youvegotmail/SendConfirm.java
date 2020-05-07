@@ -22,7 +22,7 @@ public class SendConfirm extends AppCompatActivity {
             MainActivity.class.getSimpleName();
     //Sound Effect variables
     private SoundPool soundPool;
-    private int sound1, sound2;
+    private int sound1, sound2, sound3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,8 @@ public class SendConfirm extends AppCompatActivity {
         }
 
         sound1 = soundPool.load(this, R.raw.you_got_mail_w, 1);
+        sound2 = soundPool.load(this, R.raw.alert_error_02, 1);
+        sound3 = soundPool.load(this, R.raw.alert_error_03,1);
 
 
         /* Initialize the views. */
@@ -75,29 +77,46 @@ public class SendConfirm extends AppCompatActivity {
     }
 
     public void launchConfirmSendActivity(View view) {
+        //Sound Reference
         final ImageView confirmSend;
-        confirmSend = findViewById(R.id.confirm_send_button);;
+        confirmSend = findViewById(R.id.confirm_send_button);
+
         displayToast(getString(R.string.confirm_push));
         Log.d(LOG_TAG, "Push Notification Sent!");
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        //Play Sound
         playSound(confirmSend);
     }
 
     public void launchWrongTypeActivity(View view) {
+        //Sound Reference
+        final ImageView confirmSend;
+        confirmSend = findViewById(R.id.wrong_mail);
+
         displayToast(getString(R.string.wrong_mail_type));
         Log.d(LOG_TAG, "Wrong Mail Type");
         Intent intent = new Intent(this, MailType.class);
         intent.putExtra("title", titleIntent);
         intent.putExtra("info", infoIntent);
         startActivity(intent);
+
+        //Play Sound
+        playSound(confirmSend);
     }
 
     public void launchWrongPOBoxActivity(View view) {
+        //Sound Reference
+        final ImageView confirmSend;
+        confirmSend = findViewById(R.id.wrong_po_box);
+
         displayToast(getString(R.string.wrong_po_box));
         Log.d(LOG_TAG, "Push Notification Sent!");
         Intent intent = new Intent(this, RegisteredBoxes.class);
         startActivity(intent);
+
+        //Play Sound
+        playSound(confirmSend);
     }
 
     //Play Sound Effects
@@ -105,6 +124,12 @@ public class SendConfirm extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.confirm_send_button:
                 soundPool.play(sound1, 1, 1, 0, 0, 1);
+                break;
+            case R.id.wrong_mail:
+                soundPool.play(sound2, 1, 1, 0, 0, 1);
+                break;
+            case R.id.wrong_po_box:
+                soundPool.play(sound3, 1, 1, 0, 0, 1);
                 break;
         }
     }

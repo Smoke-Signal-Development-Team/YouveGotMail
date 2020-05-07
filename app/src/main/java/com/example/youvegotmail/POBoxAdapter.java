@@ -2,6 +2,7 @@ package com.example.youvegotmail;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -134,6 +135,8 @@ class POBoxAdapter extends RecyclerView.Adapter<POBoxAdapter.ViewHolder> impleme
                 return;
             }
             else {
+                MediaPlayer mediaPlayer = MediaPlayer.create(view.getContext(), R.raw.pobox_sound);
+                mediaPlayer.start();
                 mContext.startActivity(detailIntent);
             }
         }
